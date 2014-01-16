@@ -128,6 +128,7 @@ nnoremap \qv :vsplit .stack<CR>
 " git command
 nnoremap \gs :Gstatus<CR>
 nnoremap \gl :Glog<CR>
+nnoremap \ggl :Gvsplit! log --stat<CR>
 nnoremap \gb :Gblame<CR>
 nnoremap \gd :Gdiff<CR>
 set directory+=$TMP
