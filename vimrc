@@ -109,7 +109,6 @@ Bundle 'fs111/pydoc.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
-Bundle 'Yggdroot/indentLine'
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 
@@ -217,9 +216,3 @@ nmap \fmd :CtrlPBookmarkDir<CR>
 nmap \ft  :CtrlPTag<CR>
 nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
-
-" indentline configuration
-let g:indentLine_char = '|'
-let g:indentLine_fileType = []
-let g:indentLine_fileTypeExclude = []
-let g:indentLine_bufNameExclude = ['NERD_tree.*']
