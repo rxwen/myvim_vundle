@@ -1,5 +1,5 @@
 let g:vim_file_root="~/.vim"
-if has('win32')
+if has('win32') || has('win64')
     let g:vim_file_root="d:/vim/vimfiles"
     au GUIEnter * simalt ~x " start gvim in maximazed mode
     "source $VIMRUNTIME/mswin.vim
@@ -32,6 +32,7 @@ else
 endif
 
 set nocompatible
+set laststatus=2
 
 :set grepprg=grep\ -nrIE
 nnoremap \gp :grep 
@@ -101,6 +102,12 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'fs111/pydoc.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'Yggdroot/indentLine'
+Bundle 'Lokaltog/powerline'
+exec 'set rtp+='.g:vim_file_root.'/bundle/powerline/powerline/bindings/vim'
+Bundle 'godlygeek/tabular'
+
 " vundle configuration end
 
 " doxygentoolkit mapping
@@ -123,6 +130,7 @@ nnoremap \gs :Gstatus<CR>
 nnoremap \gl :Glog<CR>
 nnoremap \gb :Gblame<CR>
 nnoremap \gd :Gdiff<CR>
+set directory+=$TMP
 
 " map \b to run make command
 nnoremap \b :make<CR>
@@ -198,3 +206,8 @@ nmap \fmd :CtrlPBookmarkDir<CR>
 nmap \ft  :CtrlPTag<CR>
 nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
+
+" indentline configuration
+let g:indentLine_fileType = []
+let g:indentLine_fileTypeExclude = []
+let g:indentLine_bufNameExclude = ['NERD_tree.*']
