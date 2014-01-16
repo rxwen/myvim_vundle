@@ -48,6 +48,9 @@ nnoremap \fd :let @"=expand("%:p:h")<CR>
 nnoremap \fP :let @*=expand("%:p")<CR> 
 nnoremap \fN :let @*=expand("%:t")<CR> 
 nnoremap \fD :let @*=expand("%:p:h")<CR> 
+nnoremap \df :diffthis<CR>
+nnoremap \ds :vert diffsplit 
+nnoremap \do :diffoff<CR>
 " tcsh-style editing keys
 :cnoremap <C-A> <Home>
 :cnoremap <C-F> <Right>
@@ -87,6 +90,7 @@ Bundle 'gmarik/vundle'
 
 " My bundles here:
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/a.vim'
@@ -131,6 +135,7 @@ nnoremap \gl :Glog<CR>
 nnoremap \ggl :Gvsplit! log --stat<CR>
 nnoremap \gb :Gblame<CR>
 nnoremap \gd :Gdiff<CR>
+nnoremap \gv :Gitv<CR>
 set directory+=$TMP
 
 " map \b to run make command
