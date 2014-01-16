@@ -108,8 +108,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'Yggdroot/indentLine'
-Bundle 'Lokaltog/powerline'
-exec 'set rtp+='.g:vim_file_root.'/bundle/powerline/powerline/bindings/vim'
+Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 
 " vundle configuration end
@@ -214,6 +213,7 @@ nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
 
 " indentline configuration
+let g:indentLine_char = '|'
 let g:indentLine_fileType = []
 let g:indentLine_fileTypeExclude = []
 let g:indentLine_bufNameExclude = ['NERD_tree.*']
