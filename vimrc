@@ -1,3 +1,5 @@
+source $VIMRUNTIME/vimrc_example.vim
+
 let g:vim_file_root="~/.vim"
 if has('win32') || has('win64')
     let g:vim_file_root="d:/vim/vimfiles"
@@ -188,7 +190,11 @@ let g:ctrlp_reuse_window = 'netrw\|help\|quickfix'
 let g:ctrlp_tabpage_position = 'ac'
 let g:ctrlp_use_caching = 1
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*        " Linux/MacOSX
+if has('win32') || has('win64')
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*    " Linux/MacOSX
+endif
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\v[\/]\.(git|hg|svn)$',
 \ 'file': '\v\.(exe|so|dll|o|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3)$',
