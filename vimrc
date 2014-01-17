@@ -108,6 +108,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
+Bundle 'davidhalter/jedi-vim'
 
 " vundle configuration end
 
@@ -211,7 +212,7 @@ nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
 
 " jedi plugin configuration (included via Youcompleteme plugin, as submodule)
-let g:jedi#documentation_command = 'K'
+"let g:jedi#documentation_command = 'K'
 "let g:jedi#goto_assignments_command = "<leader>g"
 "let g:jedi#goto_definitions_command = "<leader>d"
 "let g:jedi#documentation_command = "K"
