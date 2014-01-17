@@ -220,3 +220,6 @@ nmap \fl  :CtrlPLine<CR>
 ""let g:jedi#completions_command = "<C-Space>"
 "let g:jedi#rename_command = "<leader>r"
 "let g:jedi#show_call_signatures = "1"
+
+" formatprg configuration
+autocmd FileType cpp,c set formatprg=astyle\ --mode=c\ -A2\ -c\ -j\ -p\ -k3\ -n\ -z2
