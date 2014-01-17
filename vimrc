@@ -1,4 +1,5 @@
 source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/ftplugin/man.vim
 
 let g:vim_file_root="~/.vim"
 if has('win32') || has('win64')
@@ -7,9 +8,6 @@ if has('win32') || has('win64')
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
     colo darkblue
-
-    " windows specific pydoc setting
-    let g:pydoc_cmd = 'python -m pydoc'
 
     " Alt-Space is System menu
     if has("gui")
@@ -105,7 +103,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tmhedberg/matchit'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'fs111/pydoc.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
@@ -117,11 +114,6 @@ Bundle 'godlygeek/tabular'
 " doxygentoolkit mapping
 nmap \dx :Dox<CR>
 " end doxygentoolkit mapping
-
-" pydoc setting
-nmap \pD :Pydoc 
-nmap \pd :Pydoc <C-R>=expand("<cword>")<CR><CR>
-" nmap \ps :PydocSearch  
 
 " generate errorformat(%f:%l: %m) string based on current cursor position
 nnoremap \qp :let @"=expand("%").":".line(".").": ".expand("<cWORD>")."\n"<CR> 
@@ -170,6 +162,7 @@ let g:tagbar_left = 1
 nnoremap \tg :TagbarToggle<CR>
 
 nnoremap \m  :Man 
+"nmap K :exec "Man" expand("<cword>")<CR>
 
 " youcompleteme configuration
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -216,3 +209,13 @@ nmap \fmd :CtrlPBookmarkDir<CR>
 nmap \ft  :CtrlPTag<CR>
 nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
+
+" jedi plugin configuration (included via Youcompleteme plugin, as submodule)
+let g:jedi#documentation_command = 'K'
+"let g:jedi#goto_assignments_command = "<leader>g"
+"let g:jedi#goto_definitions_command = "<leader>d"
+"let g:jedi#documentation_command = "K"
+"let g:jedi#usages_command = "<leader>n"
+""let g:jedi#completions_command = "<C-Space>"
+"let g:jedi#rename_command = "<leader>r"
+"let g:jedi#show_call_signatures = "1"
