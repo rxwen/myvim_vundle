@@ -9,6 +9,11 @@ if has('win32') || has('win64')
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
     colo darkblue
+    if has('gui_running')
+        colo darkblue
+    else
+        colo desert
+    endif
 
     " Alt-Space is System menu
     if has("gui")
@@ -26,7 +31,11 @@ if has('win32') || has('win64')
     set guioptions-=r " remove scrollbars from gui
     set guioptions-=R " remove scrollbars from gui
 elseif has("mac")
-    colo darkblue
+    if has('gui_running')
+        colo darkblue
+    else
+        colo desert
+    endif
     set guifont=Monaco:h13 " set font to Consolas, height 11
 else
     if has('gui_running')
