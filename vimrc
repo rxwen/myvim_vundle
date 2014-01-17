@@ -178,10 +178,12 @@ let g:ycm_autoclose_preview_window_after_insertion = 0
 
 " ctrlp configuration
 let g:ctrlp_regexp = 0
-let g:ctrlp_match_window = 'bottom,order:btt,min:0,max:50'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:0,max:50'
 let g:ctrlp_reuse_window = 'netrw\|help\|quickfix'
 let g:ctrlp_tabpage_position = 'ac'
 let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
