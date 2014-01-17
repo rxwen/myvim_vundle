@@ -8,7 +8,6 @@ if has('win32') || has('win64')
     au GUIEnter * simalt ~x " start gvim in maximazed mode
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
-    colo darkblue
     if has('gui_running')
         colo darkblue
     else
