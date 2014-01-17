@@ -163,7 +163,7 @@ let g:tagbar_left = 1
 nnoremap \tg :TagbarToggle<CR>
 
 nnoremap \m  :Man 
-"nmap K :exec "Man" expand("<cword>")<CR>
+nnoremap K :exec "Man" expand("<cword>")<CR>
 
 " youcompleteme configuration
 let g:ycm_collect_identifiers_from_tags_files = 1
