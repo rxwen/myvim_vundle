@@ -2,6 +2,7 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/ftplugin/man.vim
 
 let g:vim_file_root="~/.vim"
+
 if has('win32') || has('win64')
     let g:vim_file_root="d:/vim/vimfiles"
     au GUIEnter * simalt ~x " start gvim in maximazed mode
@@ -28,7 +29,11 @@ elseif has("mac")
     colo darkblue
     set guifont=Monaco:h13 " set font to Consolas, height 11
 else
-    colo evening
+    if has('gui_running')
+        colo desert
+    else
+        colo torte
+    endif
 endif
 
 set nocompatible
