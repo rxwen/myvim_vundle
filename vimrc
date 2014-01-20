@@ -40,7 +40,8 @@ else
     if has('gui_running')
         colo desert
     else
-        colo torte
+        "colo torte
+        colo desert
     endif
 endif
 
