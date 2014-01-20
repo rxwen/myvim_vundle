@@ -109,6 +109,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/javacomplete'
+Bundle 'rxwen/gtags.vim'
 Bundle 'rxwen/vim-cscope_maps'
 Bundle 'rxwen/vim-finder'
 Bundle 'scrooloose/nerdcommenter'
@@ -175,8 +176,19 @@ let g:tagbar_autoshowtag = 1
 let g:tagbar_left = 1
 nnoremap \tg :TagbarToggle<CR>
 
+function! GetVisualSelection()
+    let [s:lnum1, s:col1] = getpos("'<")[1:2]
+    let [s:lnum2, s:col2] = getpos("'>")[1:2]
+    let s:lines = getline(s:lnum1, s:lnum2)
+    let s:lines[-1] = s:lines[-1][: s:col2 - (&selection == 'inclusive' ? 1 : 2)]
+    let s:lines[0] = s:lines[0][s:col1 - 1:]
+    echomsg join(s:lines, ' ')
+    return join(s:lines, ' ')
+
+endfunction
 nnoremap \m  :Man 
 nnoremap K :exec "Man" expand("<cword>")<CR>
+vnoremap K <esc>:exec "Man " GetVisualSelection()<CR>
 
 " youcompleteme configuration
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -235,6 +247,11 @@ nmap \fl  :CtrlPLine<CR>
 ""let g:jedi#completions_command = "<C-Space>"
 "let g:jedi#rename_command = "<leader>r"
 "let g:jedi#show_call_signatures = "1"
+""autocmd FileType python if g:jedi#documentation_command != '' | execute "vnoremap <silent> <buffer>".g:jedi#documentation_command." :call jedi#show_documentation()<CR>" | endif
 
 " formatprg configuration
 autocmd FileType cpp,c set formatprg=astyle\ --mode=c\ -A2\ -c\ -j\ -p\ -k3\ -n\ -z2
+
+let g:Gtags_prefer_gtags_to_cscope = 1
+let g:Gtags_Auto_Map = 1
+let g:Gtags_OpenQuickfixWindow = 0
