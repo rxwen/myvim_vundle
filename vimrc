@@ -232,9 +232,9 @@ let g:ctrlp_prompt_mappings = {
 nmap \ff  :CtrlP ./<CR>
 nmap \fb  :CtrlPBuffer<CR>
 nmap \fc  :CtrlPCurFile<CR>
-nmap \fr  :CtrlPMRUFiles<CR>
-nmap \fma :CtrlPBookmarkFileAdd<CR>
-nmap \fmd :CtrlPBookmarkDir<CR>
+" show root 
+nmap \fr  :CtrlP<CR>
+nmap \fm  :CtrlPMRUFiles<CR>
 nmap \ft  :CtrlPTag<CR>
 nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
