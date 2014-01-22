@@ -114,6 +114,7 @@ Bundle 'vim-scripts/javacomplete'
 Bundle 'rxwen/gtags.vim'
 Bundle 'rxwen/vim-cscope_maps'
 Bundle 'rxwen/vim-finder'
+Bundle 'rxwen/vim-ctrlp_listsource_ext'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -213,13 +214,13 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
 if has('win32') || has('win64')
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.obj,*.o  " Windows
 else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*    " Linux/MacOSX
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.o    " Linux/MacOSX
 endif
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-\ 'file': '\v\.(exe|so|dll|o|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3)$',
+\ 'file': '\v\.(exe|so|dll|o|obj|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3)$',
 \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 \ }
 let g:ctrlp_prompt_mappings = {
@@ -238,6 +239,7 @@ nmap \fm  :CtrlPMRUFiles<CR>
 nmap \ft  :CtrlPTag<CR>
 nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
+nmap \fs  :CtrlPListSource<CR>
 
 " jedi plugin configuration (included via Youcompleteme plugin, as submodule)
 "let g:jedi#documentation_command = 'K'
