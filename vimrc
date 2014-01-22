@@ -233,7 +233,12 @@ nmap \fc  :CtrlPCurFile<CR>
 " show root 
 nmap \fr  :CtrlP<CR>
 nmap \fm  :CtrlPMRUFiles<CR>
-nmap \ft  :CtrlPTag<CR>
+" list all tags from tags file
+nmap \fa  :CtrlPTag<CR>
+" list tags in current buffer
+nmap \ft  :CtrlPBufTag<CR>
+" list tags in all buffers
+nmap \fT  :CtrlPBufTagAll<CR>
 nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
 nmap \fs  :CtrlPListSource<CR>
