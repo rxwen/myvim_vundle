@@ -118,6 +118,7 @@ Bundle 'rxwen/vim-ctrlp_listsource_ext'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tmhedberg/matchit'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
@@ -191,7 +192,7 @@ nnoremap K :exec "Man" expand("<cword>")<CR>
 vnoremap K <esc>:exec "Man " GetVisualSelection()<CR>
 
 " youcompleteme configuration
-let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_tags_files = 0 " consumes too much memory when work with linux kernel
 let g:ycm_key_list_previous_completion = [] "disable default key
 let g:ycm_key_list_select_completion = [] "disable default key
 "let g:ycm_key_invoke_completion = '<C-XC-O>'
@@ -200,6 +201,10 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_seed_identifiers_with_syntax = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_error_symbol = 'x'
+let g:ycm_warning_symbol = '>'
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_always_populate_location_list = 1
 
 " ctrlp configuration
 let g:ctrlp_regexp = 0
