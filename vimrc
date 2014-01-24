@@ -48,6 +48,7 @@ endif
 
 set nocompatible
 set laststatus=2
+set history=80
 
 :set grepprg=grep\ -nrIE
 nnoremap \gp :grep 
