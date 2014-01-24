@@ -114,7 +114,7 @@ Bundle 'vim-scripts/javacomplete'
 Bundle 'rxwen/gtags.vim'
 Bundle 'rxwen/vim-cscope_maps'
 Bundle 'rxwen/vim-finder'
-Bundle 'rxwen/vim-ctrlp_listsource_ext'
+Bundle 'rxwen/vim-ctrlp_extensions'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tmhedberg/matchit'
@@ -247,6 +247,7 @@ nmap \fT  :CtrlPBufTagAll<CR>
 nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
 nmap \fs  :CtrlPListSource<CR>
+nmap \f:  :CtrlPCmdHistory<CR>
 
 " jedi plugin configuration (included via Youcompleteme plugin, as submodule)
 "let g:jedi#documentation_command = 'K'
