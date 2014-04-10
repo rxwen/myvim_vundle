@@ -90,7 +90,6 @@ set incsearch
 set hlsearch
 
 
-exec 'autocmd BufNewFile makefile   0r '.g:vim_file_root.'/skeleton/makefile.skel'
 exec 'autocmd BufNewFile Android.mk 0r '.g:vim_file_root.'/skeleton/Android.mk.skel'
 exec 'autocmd BufNewFile *.tex      0r '.g:vim_file_root.'/skeleton/tex.skel'
 exec 'autocmd BufNewFile *.py       0r '.g:vim_file_root.'/skeleton/py.skel'
