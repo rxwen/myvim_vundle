@@ -256,6 +256,8 @@ nmap \f:  :CtrlPCmdHistory<CR>
 "let g:jedi#goto_definitions_command = "<leader>d"
 "let g:jedi#documentation_command = "K"
 "let g:jedi#usages_command = "<leader>n"
+let g:jedi#popup_select_first = "0"
+let g:jedi#auto_close_doc = "1"
 ""let g:jedi#completions_command = "<C-Space>"
 "let g:jedi#rename_command = "<leader>r"
 "let g:jedi#show_call_signatures = "1"
