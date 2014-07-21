@@ -4,7 +4,7 @@ source $VIMRUNTIME/ftplugin/man.vim
 let g:vim_file_root="~/.vim"
 
 if has('win32') || has('win64')
-    let g:vim_file_root="d:/vim/vimfiles"
+    let g:vim_file_root="c:/tools/vim/vimfiles"
     au GUIEnter * simalt ~x " start gvim in maximazed mode
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
@@ -116,6 +116,7 @@ Bundle 'rxwen/gtags.vim'
 Bundle 'rxwen/vim-cscope_maps'
 Bundle 'rxwen/vim-finder'
 Bundle 'rxwen/vim-ctrlp_extensions'
+Bundle 'rxwen/Conque-Shell'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tmhedberg/matchit'
