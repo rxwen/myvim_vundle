@@ -50,7 +50,12 @@ set nocompatible
 set laststatus=2
 set history=80
 
-:set grepprg=grep\ -nrIE
+if executable('ag')
+    " use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+else
+    :set grepprg=grep\ -nrIE
+endif
 nnoremap \gp :grep 
 
 nnoremap \cn :cnext<CR> 
