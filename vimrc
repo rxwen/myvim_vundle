@@ -49,6 +49,7 @@ endif
 set nocompatible
 set laststatus=2
 set history=80
+set noundofile
 
 if executable('ag')
     " use ag over grep
