@@ -105,7 +105,8 @@ exec 'autocmd BufNewFile *.pyw      0r '.g:vim_file_root.'/skeleton/py.skel'
 "filetype off " required for vundle
 
 exec 'set rtp+='.g:vim_file_root.'/bundle/vundle'
-call vundle#rc(g:vim_file_root."/bundle")
+call vundle#begin(g:vim_file_root."/bundle")
+"call vundle#rc(g:vim_file_root."/bundle")
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
@@ -131,6 +132,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
 Bundle 'davidhalter/jedi-vim'
+call vundle#end()            " required
 
 " vundle configuration end
 
@@ -149,7 +151,7 @@ nnoremap \gs :Gstatus<CR>
 nnoremap \gl :Glog<CR>
 nnoremap \ggl :Gvsplit! log --stat<CR>
 nnoremap \gb :Gblame<CR>
-nnoremap \gd :Gdiff<CR>
+nnoremap \gd :Gvdiff<CR>
 nnoremap \gv :Gitv<CR>
 set directory+=$TMP
 
