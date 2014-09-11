@@ -136,6 +136,7 @@ if has("mac")
 Bundle 'tpope/vim-dispatch'
 Bundle 'nosami/Omnisharp.git'
 endif
+Bundle 'fatih/vim-go'
 call vundle#end()            " required
 
 " vundle configuration end
