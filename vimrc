@@ -132,6 +132,10 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
 Bundle 'davidhalter/jedi-vim'
+if has("mac")
+Bundle 'tpope/vim-dispatch'
+Bundle 'nosami/Omnisharp.git'
+endif
 call vundle#end()            " required
 
 " vundle configuration end
@@ -264,7 +268,7 @@ nmap \f:  :CtrlPCmdHistory<CR>
 "let g:jedi#goto_definitions_command = "<leader>d"
 "let g:jedi#documentation_command = "K"
 "let g:jedi#usages_command = "<leader>n"
-let g:jedi#popup_select_first = "0"
+let g:jedi#popup_select_first = 0
 let g:jedi#auto_close_doc = "1"
 ""let g:jedi#completions_command = "<C-Space>"
 "let g:jedi#rename_command = "<leader>r"
