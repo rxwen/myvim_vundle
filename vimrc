@@ -50,6 +50,9 @@ set nocompatible
 set laststatus=2
 set history=80
 set noundofile
+" enable hidden so that a buffer is allowed to be closed to hidden mode
+" unless we terminate the edit session
+set hidden
 
 if executable('ag')
     " use ag over grep
@@ -137,6 +140,7 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'nosami/Omnisharp.git'
 endif
 Bundle 'fatih/vim-go'
+Bundle 'vim-ruby/vim-ruby'
 call vundle#end()            " required
 
 " vundle configuration end
