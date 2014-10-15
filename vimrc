@@ -97,6 +97,7 @@ set encoding=utf8 " use utf8 encoding by default
 set ruler
 set incsearch
 set hlsearch
+set smartcase " be case sensitive if the search pattern contains upper case letter
 
 
 exec 'autocmd BufNewFile Android.mk 0r '.g:vim_file_root.'/skeleton/Android.mk.skel'
