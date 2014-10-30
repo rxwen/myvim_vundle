@@ -53,6 +53,9 @@ set noundofile
 " enable hidden so that a buffer is allowed to be closed to hidden mode
 " unless we terminate the edit session
 set hidden
+"let vim command line be more zsh like
+set wildmode=full
+set wildmenu
 
 if executable('ag')
     " use ag over grep
