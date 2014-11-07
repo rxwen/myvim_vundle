@@ -65,6 +65,17 @@ else
 endif
 nnoremap \gp :grep 
 
+function! CountApperenceOf(pattern)
+    let pattern = a:pattern
+    if a:pattern == ""
+        let pattern = input("Count apperence of:")
+    endif
+    let pattern = escape(pattern, '/')
+    execute ":%s/\\V" . pattern . "//gn"
+endfunction
+
+nnoremap \wc :call CountApperenceOf("")<CR>
+vnoremap \wc <esc>:call CountApperenceOf(GetVisualSelection())<CR>
 nnoremap \cn :cnext<CR> 
 nnoremap \cp :cprevious<CR> 
 nnoremap <C-W>t :tabnew<CR> 
@@ -205,7 +216,6 @@ function! GetVisualSelection()
     let s:lines = getline(s:lnum1, s:lnum2)
     let s:lines[-1] = s:lines[-1][: s:col2 - (&selection == 'inclusive' ? 1 : 2)]
     let s:lines[0] = s:lines[0][s:col1 - 1:]
-    echomsg join(s:lines, ' ')
     return join(s:lines, ' ')
 
 endfunction
