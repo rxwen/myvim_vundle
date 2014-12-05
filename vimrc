@@ -177,6 +177,8 @@ nnoremap \ggl :Gvsplit! log --stat<CR>
 nnoremap \gb :Gblame<CR>
 nnoremap \gd :Gvdiff<CR>
 nnoremap \gv :Gitv<CR>
+" \gV to show log for current file
+nnoremap \gV :Gitv!<CR>
 set directory+=$TMP
 
 " map \b to run make command
