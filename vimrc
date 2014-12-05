@@ -308,3 +308,4 @@ nnoremap \as :AS<CR>
 nnoremap \at :AT<CR>
 nnoremap \ag :A<CR>
 
+nnoremap \r :set cursorline! cursorcolumn!<CR>
