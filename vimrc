@@ -156,6 +156,7 @@ Bundle 'nosami/Omnisharp.git'
 endif
 Bundle 'fatih/vim-go'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'PProvost/vim-ps1'
 call vundle#end()            " required
 
 " vundle configuration end
