@@ -120,7 +120,7 @@ exec 'autocmd BufNewFile *.py       0r '.g:vim_file_root.'/skeleton/py.skel'
 exec 'autocmd BufNewFile *.pyw      0r '.g:vim_file_root.'/skeleton/py.skel'
 
 " vundle configuration
-"filetype off " required for vundle
+filetype off " required for vundle
 
 exec 'set rtp+='.g:vim_file_root.'/bundle/vundle'
 call vundle#begin(g:vim_file_root."/bundle")
