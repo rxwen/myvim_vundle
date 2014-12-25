@@ -158,6 +158,7 @@ Bundle 'fatih/vim-go'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'PProvost/vim-ps1'
 Bundle 'tfnico/vim-gradle'
+Bundle 'ekalinin/Dockerfile.vim'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
