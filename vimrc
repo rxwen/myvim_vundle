@@ -160,6 +160,8 @@ Bundle 'PProvost/vim-ps1'
 Bundle 'tfnico/vim-gradle'
 call vundle#end()            " required
 
+filetype on " revert filetype option after vundle initialization
+
 " vundle configuration end
 
 " doxygentoolkit mapping
@@ -313,3 +315,4 @@ nnoremap \at :AT<CR>
 nnoremap \ag :A<CR>
 
 nnoremap \r :set cursorline! cursorcolumn!<CR>
+
