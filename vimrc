@@ -9,9 +9,9 @@ if has('win32') || has('win64')
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
     if has('gui_running')
-        colo darkblue
+        colo molokai
     else
-        colo desert
+        colo molokai
     endif
 
     " Alt-Space is System menu
@@ -32,17 +32,17 @@ if has('win32') || has('win64')
 elseif has("mac")
     if has('gui_running')
         "colo darkblue
-        colo desert
+        colo molokai
     else
-        colo desert
+        colo molokai
     endif
     set guifont=Monaco:h13 " set font to Consolas, height 11
 else
     if has('gui_running')
-        colo desert
+        colo molokai
     else
         "colo torte
-        colo desert
+        colo molokai
     endif
 endif
 
