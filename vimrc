@@ -39,10 +39,10 @@ elseif has("mac")
     set guifont=Monaco:h13 " set font to Consolas, height 11
 else
     if has('gui_running')
-        colo molokai
+        colo mydesert
     else
         "colo torte
-        colo molokai
+        colo mydesert
     endif
 endif
 
