@@ -140,7 +140,6 @@ Bundle 'rxwen/gtags.vim'
 Bundle 'rxwen/vim-cscope_maps'
 Bundle 'rxwen/vim-finder'
 Bundle 'rxwen/vim-ctrlp_extensions'
-Bundle 'rxwen/Conque-Shell'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tmhedberg/matchit'
@@ -159,6 +158,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'PProvost/vim-ps1'
 Bundle 'tfnico/vim-gradle'
 Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'airblade/vim-gitgutter'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -185,6 +185,10 @@ nnoremap \gv :Gitv<CR>
 " \gV to show log for current file
 nnoremap \gV :Gitv!<CR>
 set directory+=$TMP
+
+" gitgutter configuration
+nnoremap \gh :GitGutterLineHighlightsToggle<CR>
+let g:gitgutter_highlight_lines = 0
 
 " map \b to run make command
 nnoremap \b :make<CR>
@@ -287,6 +291,7 @@ nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
 nmap \fs  :CtrlPListSource<CR>
 nmap \f:  :CtrlPCmdHistory<CR>
+nmap \f/  :CtrlPSearchHistory<CR>
 
 " jedi plugin configuration (included via Youcompleteme plugin, as submodule)
 "let g:jedi#documentation_command = 'K'
