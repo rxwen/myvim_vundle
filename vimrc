@@ -149,8 +149,8 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
 Bundle 'davidhalter/jedi-vim'
-if has("mac")
 Bundle 'tpope/vim-dispatch'
+if has("mac")
 Bundle 'nosami/Omnisharp.git'
 endif
 Bundle 'fatih/vim-go'
