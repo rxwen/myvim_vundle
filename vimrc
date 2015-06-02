@@ -191,7 +191,7 @@ nnoremap \gh :GitGutterLineHighlightsToggle<CR>
 let g:gitgutter_highlight_lines = 0
 
 " map \b to run make command
-nnoremap \b :make<CR>
+nnoremap \b :Make<CR>
 
 " support aapt errorformat
 let &efm = '\ %#[aapt]\ %f:%l:\ %m,' . &efm
