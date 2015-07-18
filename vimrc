@@ -159,6 +159,7 @@ Bundle 'PProvost/vim-ps1'
 Bundle 'tfnico/vim-gradle'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'terryma/vim-multiple-cursors'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -322,3 +323,5 @@ nnoremap \ag :A<CR>
 
 nnoremap \r :set cursorline! cursorcolumn!<CR>
 
+" multiple-cursors configuration
+let g:multi_cursor_start_key='\m'
