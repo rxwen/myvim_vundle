@@ -3,6 +3,25 @@ source $VIMRUNTIME/ftplugin/man.vim
 
 let g:vim_file_root="~/.vim"
 
+syntax on
+let g:html_use_css = 0
+set nu
+set nobackup
+set ic 	"ignore case when search, to turn it off, run :set noic
+set smartindent
+set autoindent
+set guioptions-=T 
+"autocmd FileType c,cpp,h,asp,html set shiftwidth=4 | set tabstop=4 | set expandtab  
+set shiftwidth=4 " set auto indent width to 4 when switch lines
+set tabstop=4 " set indent width to 4
+set expandtab " use spaces instead of tab 
+set encoding=utf8 " use utf8 encoding by default
+set ruler
+set incsearch
+set hlsearch
+set smartcase " be case sensitive if the search pattern contains upper case letter
+
+
 if has('win32') || has('win64')
     let g:vim_file_root="c:/tools/vim/vimfiles"
     au GUIEnter * simalt ~x " start gvim in maximazed mode
@@ -94,25 +113,6 @@ nnoremap \do :diffoff<CR>
 :cnoremap <C-A> <Home>
 :cnoremap <C-F> <Right>
 :cnoremap <C-B> <Left>
-
-syntax on
-let g:html_use_css = 0
-set nu
-set nobackup
-set ic 	"ignore case when search, to turn it off, run :set noic
-set smartindent
-set autoindent
-set guioptions-=T 
-"autocmd FileType c,cpp,h,asp,html set shiftwidth=4 | set tabstop=4 | set expandtab  
-set shiftwidth=4 " set auto indent width to 4 when switch lines
-set tabstop=4 " set indent width to 4
-set expandtab " use spaces instead of tab 
-set encoding=utf8 " use utf8 encoding by default
-set ruler
-set incsearch
-set hlsearch
-set smartcase " be case sensitive if the search pattern contains upper case letter
-
 
 exec 'autocmd BufNewFile Android.mk 0r '.g:vim_file_root.'/skeleton/Android.mk.skel'
 exec 'autocmd BufNewFile *.tex      0r '.g:vim_file_root.'/skeleton/tex.skel'
