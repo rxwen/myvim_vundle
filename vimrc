@@ -62,7 +62,7 @@ else
         colo mydesert
     else
         "colo torte
-        colo mydesert
+        colo molokai
     endif
 endif
 
