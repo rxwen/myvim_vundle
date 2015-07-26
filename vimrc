@@ -20,6 +20,7 @@ set ruler
 set incsearch
 set hlsearch
 set smartcase " be case sensitive if the search pattern contains upper case letter
+set guioptions-=e " remove tab header line
 
 
 if has('win32') || has('win64')
