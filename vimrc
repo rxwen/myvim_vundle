@@ -79,9 +79,9 @@ set wildmenu
 
 if executable('ag')
     " use ag over grep
-    set grepprg=ag\ --nogroup\ --nocolor
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ cscope.\\*\ --ignore\ tags
 else
-    :set grepprg=grep\ -nrIE
+    set grepprg=grep\ -nrIE\ --exclude=\"cscope.*\"\ --exclude=tags
 endif
 nnoremap \gp :grep 
 
@@ -325,4 +325,4 @@ nnoremap \ag :A<CR>
 nnoremap \r :set cursorline! cursorcolumn!<CR>
 
 " multiple-cursors configuration
-let g:multi_cursor_start_key='\m'
+"let g:multi_cursor_start_key='\m'
