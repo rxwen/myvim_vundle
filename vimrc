@@ -151,9 +151,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'tpope/vim-dispatch'
-if has("mac")
-Bundle 'nosami/Omnisharp.git'
-endif
 Bundle 'fatih/vim-go'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'PProvost/vim-ps1'
