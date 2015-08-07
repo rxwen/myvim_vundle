@@ -157,7 +157,6 @@ Bundle 'PProvost/vim-ps1'
 Bundle 'tfnico/vim-gradle'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'terryma/vim-multiple-cursors'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
