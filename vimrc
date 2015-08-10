@@ -319,6 +319,3 @@ nnoremap \at :AT<CR>
 nnoremap \ag :A<CR>
 
 nnoremap \r :set cursorline! cursorcolumn!<CR>
-
-" multiple-cursors configuration
-"let g:multi_cursor_start_key='\m'
