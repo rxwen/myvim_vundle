@@ -263,7 +263,7 @@ else
 endif
 let g:ctrlp_custom_ignore = {
 \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-\ 'file': '\v\.(exe|so|dll|o|obj|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3)$',
+\ 'file': '\v\.(exe|so|dll|o|obj|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3|cscope.out|cscope.files|tags)$',
 \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 \ }
 let g:ctrlp_prompt_mappings = {
