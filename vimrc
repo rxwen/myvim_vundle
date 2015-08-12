@@ -110,6 +110,7 @@ nnoremap \fD :let @*=expand("%:p:h")<CR>
 nnoremap \df :diffthis<CR>
 nnoremap \ds :vert diffsplit 
 nnoremap \do :diffoff<CR>
+nnoremap \du :diffupdate<CR>
 " tcsh-style editing keys
 :cnoremap <C-A> <Home>
 :cnoremap <C-F> <Right>
