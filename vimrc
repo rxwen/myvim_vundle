@@ -308,7 +308,7 @@ let g:jedi#auto_close_doc = "1"
 autocmd FileType cpp,c set formatprg=astyle\ --mode=c\ -A2\ -c\ -j\ -p\ -k3\ -n\ -z2
 
 " gtags configuration
-let g:Gtags_prefer_gtags_to_cscope = 1
+let g:Gtags_prefer_gtags_to_cscope = 0
 let g:Gtags_Auto_Map = 1
 let g:Gtags_OpenQuickfixWindow = 0
 
