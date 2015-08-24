@@ -77,6 +77,12 @@ set hidden
 set wildmode=full
 set wildmenu
 
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll|o|obj|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3|cscope.out|cscope.files|tags)$',
+\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+\ }
+
 if executable('ag')
     " use ag over grep
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ cscope.\\*\ --ignore\ tags
@@ -221,6 +227,7 @@ let g:tagbar_autoshowtag = 1
 let g:tagbar_left = 1
 nnoremap \tg :TagbarToggle<CR>
 
+" man utility options
 function! GetVisualSelection()
     let [s:lnum1, s:col1] = getpos("'<")[1:2]
     let [s:lnum2, s:col2] = getpos("'>")[1:2]
@@ -230,7 +237,7 @@ function! GetVisualSelection()
     return join(s:lines, ' ')
 
 endfunction
-nnoremap \m  :Man 
+nnoremap \m :Man 
 nnoremap K :exec "Man" expand("<cword>")<CR>
 vnoremap K <esc>:exec "Man " GetVisualSelection()<CR>
 
@@ -261,13 +268,8 @@ let g:ctrlp_working_path_mode = 'ra'
 if has('win32') || has('win64')
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.obj,*.o  " Windows
 else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.o    " Linux/MacOSX
+    set wildignore+=*.swp,*/.git/*,*/.hg/*,*/.svn/*,*.o    " Linux/MacOSX
 endif
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-\ 'file': '\v\.(exe|so|dll|o|obj|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3|cscope.out|cscope.files|tags)$',
-\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-\ }
 let g:ctrlp_prompt_mappings = {
 \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
 \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
