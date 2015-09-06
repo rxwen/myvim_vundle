@@ -165,6 +165,7 @@ Bundle 'tfnico/vim-gradle'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/syntastic'
+Bundle 'phongvcao/vim-stardict'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -321,5 +322,9 @@ nnoremap \av :AV<CR>
 nnoremap \as :AS<CR>
 nnoremap \at :AT<CR>
 nnoremap \ag :A<CR>
+
+" startdict configuration
+nnoremap \sw :StarDict<space>
+nnoremap \sc :StarDictCursor<CR>
 
 nnoremap \r :set cursorline! cursorcolumn!<CR>
