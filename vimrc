@@ -166,6 +166,7 @@ Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/syntastic'
 Bundle 'phongvcao/vim-stardict'
+Bundle 'Yggdroot/indentLine'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -326,5 +327,10 @@ nnoremap \ag :A<CR>
 " startdict configuration
 nnoremap \sw :StarDict<space>
 nnoremap \sc :StarDictCursor<CR>
+
+" indentline configuration
+nnoremap \ig :IndentLinesToggle<CR>
+" enable indent for tab
+" :set list lcs=tab:\|\ 
 
 nnoremap \r :set cursorline! cursorcolumn!<CR>
