@@ -167,6 +167,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/syntastic'
 Bundle 'phongvcao/vim-stardict'
 Bundle 'Yggdroot/indentLine'
+Bundle 'godlygeek/tabular'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -330,7 +331,17 @@ nnoremap \sc :StarDictCursor<CR>
 
 " indentline configuration
 nnoremap \ig :IndentLinesToggle<CR>
+let g:indentLine_showFirstIndentLevel=1
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
+let g:indentLine_fileTypeExclude = ['txt', 'log']
 " enable indent for tab
 " :set list lcs=tab:\|\ 
+
+" tabular configuration
+nnoremap \t= :Tabularize /=<CR>
+nnoremap \t: :Tabularize /:<CR>
+nnoremap \t, :Tabularize /,<CR>
+nnoremap \t<Bar> :Tabularize /<Bar><CR>
+vnoremap \t :Tabularize /
 
 nnoremap \r :set cursorline! cursorcolumn!<CR>
