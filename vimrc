@@ -122,11 +122,6 @@ nnoremap \du :diffupdate<CR>
 :cnoremap <C-F> <Right>
 :cnoremap <C-B> <Left>
 
-exec 'autocmd BufNewFile Android.mk 0r '.g:vim_file_root.'/skeleton/Android.mk.skel'
-exec 'autocmd BufNewFile *.tex      0r '.g:vim_file_root.'/skeleton/tex.skel'
-exec 'autocmd BufNewFile *.py       0r '.g:vim_file_root.'/skeleton/py.skel'
-exec 'autocmd BufNewFile *.pyw      0r '.g:vim_file_root.'/skeleton/py.skel'
-
 " vundle configuration
 filetype off " required for vundle
 
@@ -168,6 +163,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'phongvcao/vim-stardict'
 Bundle 'Yggdroot/indentLine'
 Bundle 'godlygeek/tabular'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -212,11 +209,6 @@ let &efm = '%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#,' . &efm
 nnoremap \nt    :NERDTreeFocus<CR>
 nnoremap \nT    :NERDTree 
 nnoremap \nf    :NERDTreeFind<CR>
-
-" snipMate options
-let g:snippets_dir = g:vim_file_root."/snippets"
-let g:snips_email = "rx.wen218@gmail.com"
-let g:snips_author = "Raymond Wen"
 
 " finder utility
 nnoremap \fi :Find 
