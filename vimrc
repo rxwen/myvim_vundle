@@ -336,4 +336,9 @@ nnoremap \t, :Tabularize /,<CR>
 nnoremap \t<Bar> :Tabularize /<Bar><CR>
 vnoremap \t :Tabularize /
 
+" toggle ruler
 nnoremap \r :set cursorline! cursorcolumn!<CR>
+
+" UltiSnips configuration
+let g:UltiSnipsEnableSnipMate=0
+
