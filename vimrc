@@ -340,5 +340,5 @@ vnoremap \t :Tabularize /
 nnoremap \r :set cursorline! cursorcolumn!<CR>
 
 " UltiSnips configuration
-let g:UltiSnipsEnableSnipMate=0
+let g:UltiSnipsEnableSnipMate=1
 
