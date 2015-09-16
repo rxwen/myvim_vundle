@@ -51,7 +51,6 @@ if has('win32') || has('win64')
     set guioptions-=R " remove scrollbars from gui
 elseif has("mac")
     if has('gui_running')
-        "colo darkblue
         colo molokai
     else
         colo molokai
@@ -61,7 +60,6 @@ else
     if has('gui_running')
         colo mydesert
     else
-        "colo torte
         colo molokai
     endif
 endif
