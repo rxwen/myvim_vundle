@@ -125,7 +125,6 @@ filetype off " required for vundle
 
 exec 'set rtp+='.g:vim_file_root.'/bundle/vundle'
 call vundle#begin(g:vim_file_root."/bundle")
-"call vundle#rc(g:vim_file_root."/bundle")
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
