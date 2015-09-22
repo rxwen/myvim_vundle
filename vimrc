@@ -171,12 +171,6 @@ filetype on " revert filetype option after vundle initialization
 nmap \dx :Dox<CR>
 " end doxygentoolkit mapping
 
-" generate errorformat(%f:%l: %m) string based on current cursor position
-nnoremap \qp :let @"=expand("%").":".line(".").": ".expand("<cWORD>")."\n"<CR> 
-" reload errorfile
-nnoremap \qr :cg .stack<CR> 
-nnoremap \qv :vsplit .stack<CR> 
-
 " git command
 nnoremap \gs :Gstatus<CR>
 nnoremap \gl :Glog<CR>
