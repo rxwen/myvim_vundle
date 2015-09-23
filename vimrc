@@ -75,12 +75,6 @@ set hidden
 set wildmode=full
 set wildmenu
 
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-\ 'file': '\v\.(exe|so|dll|o|obj|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3|cscope.out|cscope.files|tags|zip|rar|tgz|gz|tar|7z|iso)$',
-\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-\ }
-
 if executable('ag')
     " use ag over grep
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ cscope.\\*\ --ignore\ tags
@@ -260,6 +254,12 @@ let g:ctrlp_prompt_mappings = {
 \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
 \ 'PrtHistory(-1)':       ['<c-k>'],
 \ 'PrtHistory(1)':        ['<c-j>'],
+\ }
+
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll|o|obj|swp|a|lib|pyc|pyd|pdf|jpg|png|bmp|avi|swf|mp4|mpeg|kmv|mp3|cscope.out|cscope.files|tags|zip|rar|tgz|gz|tar|7z|iso)$',
+\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 \ }
 
 nmap \ff  :CtrlP ./<CR>
