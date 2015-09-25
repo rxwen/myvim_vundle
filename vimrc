@@ -313,6 +313,7 @@ nnoremap \sc :StarDictCursor<CR>
 
 " indentline configuration
 nnoremap \ig :IndentLinesToggle<CR>
+let g:indentLine_enabled=0
 let g:indentLine_showFirstIndentLevel=1
 let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 let g:indentLine_fileTypeExclude = ['txt', 'log']
