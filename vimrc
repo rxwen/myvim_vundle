@@ -22,7 +22,6 @@ set hlsearch
 set smartcase " be case sensitive if the search pattern contains upper case letter
 set guioptions-=e " remove tab header line
 
-
 if has('win32') || has('win64')
     let g:vim_file_root="c:/tools/vim/vimfiles"
     au GUIEnter * simalt ~x " start gvim in maximazed mode
