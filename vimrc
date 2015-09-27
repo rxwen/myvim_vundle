@@ -187,7 +187,6 @@ let &efm = '\ %#[aapt]\ %f:%l:\ %m,' . &efm
 " support ant errorformat, see :help errorformat-ant and :help let-option
 let &efm = '%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#,' . &efm
 
-
 " nerdtree options
 nnoremap \nt    :NERDTreeFocus<CR>
 nnoremap \nT    :NERDTree 
