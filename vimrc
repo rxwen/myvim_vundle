@@ -27,11 +27,7 @@ if has('win32') || has('win64')
     au GUIEnter * simalt ~x " start gvim in maximazed mode
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
-    if has('gui_running')
-        colo molokai
-    else
-        colo molokai
-    endif
+    colo molokai
 
     " Alt-Space is System menu
     if has("gui")
@@ -49,11 +45,7 @@ if has('win32') || has('win64')
     set guioptions-=r " remove scrollbars from gui
     set guioptions-=R " remove scrollbars from gui
 elseif has("mac")
-    if has('gui_running')
-        colo molokai
-    else
-        colo molokai
-    endif
+    colo molokai
     set guifont=Monaco:h13 " set font to Consolas, height 11
 else
     if has('gui_running')
