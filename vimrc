@@ -154,6 +154,9 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'godlygeek/tabular'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'elzr/vim-json'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
