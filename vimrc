@@ -101,9 +101,9 @@ nnoremap \ds :vert diffsplit
 nnoremap \do :diffoff<CR>
 nnoremap \du :diffupdate<CR>
 " tcsh-style editing keys
-:cnoremap <C-A> <Home>
-:cnoremap <C-F> <Right>
-:cnoremap <C-B> <Left>
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
 
 " vundle configuration
 filetype off " required for vundle
