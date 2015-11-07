@@ -207,8 +207,8 @@ function! GetVisualSelection()
     let s:lines[-1] = s:lines[-1][: s:col2 - (&selection == 'inclusive' ? 1 : 2)]
     let s:lines[0] = s:lines[0][s:col1 - 1:]
     return join(s:lines, ' ')
-
 endfunction
+
 nnoremap \m :Man 
 nnoremap K :exec "Man" expand("<cword>")<CR>
 vnoremap K <esc>:exec "Man " GetVisualSelection()<CR>
