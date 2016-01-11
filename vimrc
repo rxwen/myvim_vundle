@@ -10,17 +10,16 @@ set nobackup
 set ic 	"ignore case when search, to turn it off, run :set noic
 set smartindent
 set autoindent
-set guioptions-=T 
 "autocmd FileType c,cpp,h,asp,html set shiftwidth=4 | set tabstop=4 | set expandtab  
 set shiftwidth=4 " set auto indent width to 4 when switch lines
 set tabstop=4 " set indent width to 4
 set expandtab " use spaces instead of tab 
 set encoding=utf8 " use utf8 encoding by default
-set ruler
+set ruler " show the line and column number of the cursor position
 set incsearch
 set hlsearch
 set smartcase " be case sensitive if the search pattern contains upper case letter
-set guioptions-=e " remove tab header line
+set guioptions-=eT " remove tab header line and toolbar
 
 if has('win32') || has('win64')
     let g:vim_file_root="c:/tools/vim/vimfiles"
