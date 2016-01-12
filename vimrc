@@ -165,7 +165,7 @@ nnoremap \ggl :Gvsplit! log --stat<CR>
 nnoremap \gb :Gblame<CR>
 nnoremap \gd :Gvdiff<CR>
 nnoremap \gv :Gitv<CR>
-" \gV to show log for current file
+" \gV to show log for current buffer
 nnoremap \gV :Gitv!<CR>
 set directory+=$TMP
 
@@ -237,9 +237,9 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
 if has('win32') || has('win64')
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.obj,*.o  " Windows
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.obj,*.o,cscope.*,tags  " Windows
 else
-    set wildignore+=*.swp,*/.git/*,*/.hg/*,*/.svn/*,*.o    " Linux/MacOSX
+    set wildignore+=*.swp,*/.git/*,*/.hg/*,*/.svn/*,*.o,cscope.*,tags    " Linux/MacOSX
 endif
 let g:ctrlp_prompt_mappings = {
 \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
