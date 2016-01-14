@@ -324,4 +324,3 @@ nnoremap \r :set cursorline! cursorcolumn!<CR>
 
 " UltiSnips configuration
 let g:UltiSnipsEnableSnipMate=1
-
