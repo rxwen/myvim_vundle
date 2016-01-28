@@ -285,10 +285,18 @@ let g:jedi#auto_close_doc = "1"
 ""autocmd FileType python if g:jedi#documentation_command != '' | execute "vnoremap <silent> <buffer>".g:jedi#documentation_command." :call jedi#show_documentation()<CR>" | endif
 
 " formatprg configuration
-autocmd FileType cpp,c set formatprg=astyle\ --mode=c\ -A2\ -c\ -j\ -p\ -k3\ -n\ -z2
-autocmd FileType json set formatprg=jq\ '.'
-" or use python -m json.tool
-autocmd FileType xml set formatprg=xmllint\ --format\ -
+function! SetFormatPrg()
+    if &filetype == "xml"
+        set formatprg=xmllint\ --format\ -
+    elseif &filetype == "json"
+        set formatprg=jq\ '.'
+    elseif &filetype == "cpp" || &filetype == "c"
+        set formatprg=astyle\ --mode=c\ -A2\ -c\ -j\ -p\ -k3\ -n\ -z2
+    endif
+endfunction
+
+autocmd BufEnter * :call SetFormatPrg()
+autocmd FileType * :call SetFormatPrg()
 
 " gtags configuration
 let g:Gtags_prefer_gtags_to_cscope = 0
