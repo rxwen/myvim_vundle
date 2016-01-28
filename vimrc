@@ -286,6 +286,8 @@ let g:jedi#auto_close_doc = "1"
 
 " formatprg configuration
 autocmd FileType cpp,c set formatprg=astyle\ --mode=c\ -A2\ -c\ -j\ -p\ -k3\ -n\ -z2
+autocmd FileType json set formatprg=jq\ '.'
+" or use python -m json.tool
 
 " gtags configuration
 let g:Gtags_prefer_gtags_to_cscope = 0
