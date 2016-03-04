@@ -175,11 +175,6 @@ let g:gitgutter_highlight_lines = 0
 " map \b to run make command
 nnoremap \b :Make<CR>
 
-" support aapt errorformat
-let &efm = '\ %#[aapt]\ %f:%l:\ %m,' . &efm
-" support ant errorformat, see :help errorformat-ant and :help let-option
-let &efm = '%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#,' . &efm
-
 " nerdtree options
 nnoremap \nt    :NERDTreeFocus<CR>
 nnoremap \nT    :NERDTree 
