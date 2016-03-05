@@ -174,6 +174,7 @@ let g:gitgutter_highlight_lines = 0
 
 " map \b to run make command
 nnoremap \b :Make<CR>
+nnoremap \B :Make 
 
 " nerdtree options
 nnoremap \nt    :NERDTreeFocus<CR>
