@@ -148,6 +148,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'elzr/vim-json'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
+Plugin 'aklt/plantuml-syntax'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
