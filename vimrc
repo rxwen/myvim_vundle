@@ -266,6 +266,8 @@ nmap \fq  :CtrlPQuickfix<CR>
 nmap \fl  :CtrlPLine<CR>
 nmap \fs  :CtrlPListSource<CR>
 nmap \f:  :CtrlPCmdHistory<CR>
+nmap \f;  :CtrlPCmdHistory<CR>
+" map f; to cmd history too, can save a shift key stroke
 nmap \f/  :CtrlPSearchHistory<CR>
 
 " jedi plugin configuration (included via Youcompleteme plugin, as submodule)
