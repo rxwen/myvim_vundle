@@ -167,6 +167,7 @@ nnoremap \gd :Gvdiff<CR>
 nnoremap \gv :Gitv --all<CR>
 " \gV to show log for current buffer
 nnoremap \gV :Gitv! --all<CR>
+vmap \gV :Gitv! --all<CR>
 set directory+=$TMP
 
 " gitgutter configuration
