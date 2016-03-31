@@ -334,3 +334,8 @@ nnoremap \r :set cursorline! cursorcolumn!<CR>
 
 " UltiSnips configuration
 let g:UltiSnipsEnableSnipMate=1
+
+" syntastic configuration
+let g:syntastic_always_populate_loc_list=1
+nnoremap ]e :lnext<CR>
+nnoremap [e :lprevious<CR>
