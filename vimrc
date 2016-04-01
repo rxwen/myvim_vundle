@@ -272,6 +272,8 @@ nmap \f:  :CtrlPCmdHistory<CR>
 nmap \f;  :CtrlPCmdHistory<CR>
 " map f; to cmd history too, can save a shift key stroke
 nmap \f/  :CtrlPSearchHistory<CR>
+"autocmd Filetype go nmap \fg :GoDecls<CR>
+autocmd Filetype go nmap \fg :GoDeclsDir<CR>
 
 " jedi plugin configuration (included via Youcompleteme plugin, as submodule)
 "let g:jedi#documentation_command = 'K'
