@@ -86,6 +86,8 @@ nnoremap \wc :call CountApperenceOf("")<CR>
 vnoremap \wc <esc>:call CountApperenceOf(GetVisualSelection())<CR>
 nnoremap \cn :cnext<CR> 
 nnoremap \cp :cprevious<CR> 
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
 nnoremap <C-W>t :tabnew<CR> 
 " yank current file name to unamed register
 nnoremap \fp :let @"=expand("%:p")<CR> 
