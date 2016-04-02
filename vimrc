@@ -343,3 +343,22 @@ let g:UltiSnipsEnableSnipMate=1
 let g:syntastic_always_populate_loc_list=1
 nnoremap ]e :lnext<CR>
 nnoremap [e :lprevious<CR>
+
+" go-vim configuration
+augroup go
+    autocmd!
+    autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+    autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+    autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+    autocmd Filetype go nmap ,gc :GoMetaLinter<CR>
+    autocmd Filetype go nmap ,gT :GoTestFunc -v<CR>
+    autocmd Filetype go nmap ,gt :GoTest -v<CR>
+    autocmd Filetype go nmap ,gR :GoRename 
+    autocmd Filetype go nmap ,gr :GoRun<CR>
+    autocmd Filetype go nmap ,gb :GoBuild<CR>
+    autocmd Filetype go nmap ,gd :GoDescribe<CR>
+    autocmd Filetype go nmap ,gs :GoCallstack<CR>
+    autocmd Filetype go nmap ,gp :GoChannelPeers<CR>
+    autocmd Filetype go nmap ,gi :GoImports<CR>
+    let g:go_def_mapping_enabled=0
+augroup END
