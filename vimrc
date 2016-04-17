@@ -275,18 +275,18 @@ nmap \f/  :CtrlPSearchHistory<CR>
 "autocmd Filetype go nmap \fg :GoDecls<CR>
 autocmd Filetype go nmap \fg :GoDeclsDir<CR>
 
-" jedi plugin configuration (included via Youcompleteme plugin, as submodule)
-"let g:jedi#documentation_command = 'K'
-"let g:jedi#goto_assignments_command = "<leader>g"
-"let g:jedi#goto_definitions_command = "<leader>d"
-"let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>n"
-let g:jedi#popup_select_first = 0
-let g:jedi#auto_close_doc = "1"
-""let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#rename_command = "<leader>r"
-"let g:jedi#show_call_signatures = "1"
-""autocmd FileType python if g:jedi#documentation_command != '' | execute "vnoremap <silent> <buffer>".g:jedi#documentation_command." :call jedi#show_documentation()<CR>" | endif
+" jedi plugin configuration
+augroup python
+    autocmd Filetype python execute 'python sys.path.append(".")'
+    let g:jedi#popup_select_first = 0
+    let g:jedi#auto_close_doc = "1"
+    autocmd Filetype python nnoremap <silent> <buffer> ,r :call jedi#rename()<cr>
+    autocmd Filetype python vnoremap <silent> <buffer> ,r :call jedi#rename_visual()<cr>
+    autocmd Filetype python nnoremap <silent> <buffer> <C-]> :call jedi#goto()<cr>
+    autocmd Filetype python nnoremap <silent> <buffer> <C-\>g :call jedi#goto()<cr>
+    autocmd Filetype python nnoremap <silent> <buffer> <C-\>c :call jedi#usages()<cr>
+    autocmd Filetype python nnoremap <silent> <buffer> ,o :exec 'Pyimport ' . expand("<cword>")<cr>
+augroup END
 
 " formatprg configuration
 function! SetFormatPrg()
