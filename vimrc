@@ -280,8 +280,8 @@ augroup python
     autocmd Filetype python execute 'python sys.path.append(".")'
     let g:jedi#popup_select_first = 0
     let g:jedi#auto_close_doc = "1"
-    autocmd Filetype python nnoremap <silent> <buffer> ,r :call jedi#rename()<cr>
-    autocmd Filetype python vnoremap <silent> <buffer> ,r :call jedi#rename_visual()<cr>
+    autocmd Filetype python nnoremap <silent> <buffer> ,R :call jedi#rename()<cr>
+    autocmd Filetype python vnoremap <silent> <buffer> ,R :call jedi#rename_visual()<cr>
     autocmd Filetype python nnoremap <silent> <buffer> <C-]> :call jedi#goto()<cr>
     autocmd Filetype python nnoremap <silent> <buffer> <C-\>g :call jedi#goto()<cr>
     autocmd Filetype python nnoremap <silent> <buffer> <C-\>c :call jedi#usages()<cr>
@@ -350,16 +350,16 @@ augroup go
     autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
     autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
     autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-    autocmd Filetype go nmap ,gl :GoMetaLinter<CR>
-    autocmd Filetype go nmap ,gT :GoTestFunc -v<CR>
-    autocmd Filetype go nmap ,gt :GoTest -v<CR>
-    autocmd Filetype go nmap ,gc :GoTestCompile <CR>
-    autocmd Filetype go nmap ,gR :GoRename 
-    autocmd Filetype go nmap ,gr :GoRun<CR>
-    autocmd Filetype go nmap ,gb :GoBuild<CR>
-    autocmd Filetype go nmap ,gd :GoDescribe<CR>
-    autocmd Filetype go nmap ,gs :GoCallstack<CR>
-    autocmd Filetype go nmap ,gp :GoChannelPeers<CR>
-    autocmd Filetype go nmap ,gi :GoImports<CR>
+    autocmd Filetype go nmap ,l :GoMetaLinter<CR>
+    autocmd Filetype go nmap ,T :GoTestFunc -v<CR>
+    autocmd Filetype go nmap ,t :GoTest -v<CR>
+    autocmd Filetype go nmap ,c :GoTestCompile <CR>
+    autocmd Filetype go nmap ,R :GoRename 
+    autocmd Filetype go nmap ,r :GoRun<CR>
+    autocmd Filetype go nmap ,b :GoBuild<CR>
+    autocmd Filetype go nmap ,d :GoDescribe<CR>
+    autocmd Filetype go nmap ,s :GoCallstack<CR>
+    autocmd Filetype go nmap ,p :GoChannelPeers<CR>
+    autocmd Filetype go nmap ,i :GoImports<CR>
     let g:go_def_mapping_enabled=0
 augroup END
