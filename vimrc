@@ -353,7 +353,7 @@ augroup go
     autocmd Filetype go nmap ,l :GoMetaLinter<CR>
     autocmd Filetype go nmap ,T :GoTestFunc -v<CR>
     autocmd Filetype go nmap ,t :GoTest -v<CR>
-    autocmd Filetype go nmap ,c :GoTestCompile <CR>
+    autocmd Filetype go nmap ,c :GoTestCompile<CR>
     autocmd Filetype go nmap ,R :GoRename 
     autocmd Filetype go nmap ,r :GoRun<CR>
     autocmd Filetype go nmap ,b :GoBuild<CR>
