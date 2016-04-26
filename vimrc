@@ -361,5 +361,6 @@ augroup go
     autocmd Filetype go nmap ,s :GoCallstack<CR>
     autocmd Filetype go nmap ,p :GoChannelPeers<CR>
     autocmd Filetype go nmap ,i :GoImports<CR>
+    autocmd Filetype go nmap ,I :GoImplements<CR>
     let g:go_def_mapping_enabled=0
 augroup END
