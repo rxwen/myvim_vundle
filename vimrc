@@ -10,7 +10,6 @@ set nobackup
 set ic 	"ignore case when search, to turn it off, run :set noic
 set smartindent
 set autoindent
-"autocmd FileType c,cpp,h,asp,html set shiftwidth=4 | set tabstop=4 | set expandtab  
 set shiftwidth=4 " set auto indent width to 4 when switch lines
 set tabstop=4 " set indent width to 4
 set expandtab " use spaces instead of tab 
