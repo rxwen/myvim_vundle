@@ -7,7 +7,7 @@ syntax on
 let g:html_use_css = 0
 set nu
 set nobackup
-set ic 	"ignore case when search, to turn it off, run :set noic
+set ic 	" ignore case when search, to turn it off, run :set noic
 set smartindent
 set autoindent
 set shiftwidth=4 " set auto indent width to 4 when switch lines
