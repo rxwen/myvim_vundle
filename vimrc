@@ -18,7 +18,8 @@ set ruler " show the line and column number of the cursor position
 set incsearch
 set hlsearch
 set smartcase " be case sensitive if the search pattern contains upper case letter
-set guioptions-=eT " remove tab header line and toolbar
+set guioptions-=T " remove toolbar
+set guioptions-=e " remove tab header line
 
 if has('win32') || has('win64')
     let g:vim_file_root="c:/tools/vim/vimfiles"
