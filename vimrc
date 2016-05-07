@@ -151,6 +151,7 @@ Plugin 'elzr/vim-json'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'aklt/plantuml-syntax'
+Plugin 'solarnz/thrift.vim'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
