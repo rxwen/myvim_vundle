@@ -273,8 +273,6 @@ nmap \f:  :CtrlPCmdHistory<CR>
 nmap \f;  :CtrlPCmdHistory<CR>
 " map f; to cmd history too, can save a shift key stroke
 nmap \f/  :CtrlPSearchHistory<CR>
-"autocmd Filetype go nmap \fg :GoDecls<CR>
-autocmd Filetype go nmap \fg :GoDeclsDir<CR>
 
 " jedi plugin configuration
 augroup python
@@ -345,8 +343,18 @@ let g:syntastic_always_populate_loc_list=1
 nnoremap ]e :lnext<CR>
 nnoremap [e :lprevious<CR>
 
-" go-vim configuration
+" vim-go configuration
 augroup go
+    " run :GoBuild or :GoTestCompile based on the go file
+    function! s:build_go_files()
+        let l:file = expand('%')
+        if l:file =~# '^\f\+_test\.go$'
+            call go#cmd#Test(0, 1)
+        elseif l:file =~# '^\f\+\.go$'
+            call go#cmd#Build(0)
+        endif
+    endfunction
+
     autocmd!
     autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
     autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
@@ -354,14 +362,17 @@ augroup go
     autocmd Filetype go nmap ,l :GoMetaLinter<CR>
     autocmd Filetype go nmap ,T :GoTestFunc -v<CR>
     autocmd Filetype go nmap ,t :GoTest -v<CR>
-    autocmd Filetype go nmap ,c :GoTestCompile<CR>
+    "autocmd Filetype go nmap ,c :GoTestCompile<CR>
     autocmd Filetype go nmap ,R :GoRename 
     autocmd Filetype go nmap ,r :GoRun<CR>
-    autocmd Filetype go nmap ,b :GoBuild<CR>
+    "autocmd Filetype go nmap ,b :GoBuild<CR>
+    autocmd FileType go nmap ,b :<C-u>call <SID>build_go_files()<CR>
     autocmd Filetype go nmap ,d :GoDescribe<CR>
     autocmd Filetype go nmap ,s :GoCallstack<CR>
     autocmd Filetype go nmap ,p :GoChannelPeers<CR>
     autocmd Filetype go nmap ,i :GoImports<CR>
     autocmd Filetype go nmap ,I :GoImplements<CR>
     let g:go_def_mapping_enabled=0
+    "autocmd Filetype go nmap \fg :GoDecls<CR>
+    autocmd Filetype go nmap \fg :GoDeclsDir<CR>
 augroup END
