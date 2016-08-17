@@ -273,6 +273,7 @@ nmap \f:  :CtrlPCmdHistory<CR>
 nmap \f;  :CtrlPCmdHistory<CR>
 " map f; to cmd history too, can save a shift key stroke
 nmap \f/  :CtrlPSearchHistory<CR>
+call ctrlp#bdelete#init()
 
 " jedi plugin configuration
 augroup python
