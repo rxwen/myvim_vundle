@@ -374,6 +374,7 @@ augroup go
     autocmd Filetype go nmap ,i :GoImports<CR>
     autocmd Filetype go nmap ,I :GoImplements<CR>
     let g:go_def_mapping_enabled=0
+    let g:go_template_autocreate=0
     "autocmd Filetype go nmap \fg :GoDecls<CR>
     autocmd Filetype go nmap \fg :GoDeclsDir<CR>
 augroup END
