@@ -355,6 +355,7 @@ augroup go
             call go#cmd#Build(0)
         endif
     endfunction
+    let g:go_fmt_command = "goimports"
 
     autocmd!
     autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
