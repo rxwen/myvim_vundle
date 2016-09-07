@@ -374,6 +374,8 @@ augroup go
     autocmd Filetype go nmap ,p :GoChannelPeers<CR>
     autocmd Filetype go nmap ,i :GoImports<CR>
     autocmd Filetype go nmap ,I :GoImplements<CR>
+    autocmd Filetype go nmap \tj :GoAddTags<CR>
+    autocmd Filetype go nmap \tx :GoAddTags xml<CR>
     let g:go_def_mapping_enabled=0
     let g:go_template_autocreate=0
     "autocmd Filetype go nmap \fg :GoDecls<CR>
