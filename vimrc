@@ -152,6 +152,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'aklt/plantuml-syntax'
 Bundle 'solarnz/thrift.vim'
+Bundle 'mhinz/vim-grepper'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
