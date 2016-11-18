@@ -69,9 +69,13 @@ if executable('ag')
     " use ag over grep
     set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ cscope.\\*\ --ignore\ tags
     nnoremap \gp :GrepperAg 
+    let g:grepper = {}
+    let g:grepper.ag = { 'grepprg': 'ag --ignore cscope.* --ignore tags' }
 else
     set grepprg=grep\ -nrIE\ --exclude=\"cscope.*\"\ --exclude=tags
     nnoremap \gp :GrepperGrep 
+    let g:grepper = {}
+    let g:grepper.ag = { 'grepprg': 'grep --exclude=cscope.* --exclude=tags' }
 endif
 
 function! CountApperenceOf(pattern)
