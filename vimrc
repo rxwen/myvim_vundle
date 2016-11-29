@@ -159,6 +159,8 @@ Bundle 'aklt/plantuml-syntax'
 Bundle 'solarnz/thrift.vim'
 Bundle 'mhinz/vim-grepper'
 Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'haya14busa/incsearch.vim'
+Bundle 'haya14busa/incsearch-fuzzy.vim'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -388,3 +390,23 @@ augroup go
     "autocmd Filetype go nmap \fg :GoDecls<CR>
     autocmd Filetype go nmap \fg :GoDeclsDir<CR>
 augroup END
+
+" incsearch configuration
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-forward)
+map g/ <Plug>(incsearch-stay)
+function! s:config_fuzzyall(...) abort
+  return extend(copy({
+  \   'converters': [
+  \     incsearch#config#fuzzy#converter(),
+  \     incsearch#config#fuzzyspell#converter()
+  \   ],
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
+noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
+noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+"map z/ <Plug>(incsearch-fuzzyspell-/)
+"map z? <Plug>(incsearch-fuzzyspell-?)
+"map zg/ <Plug>(incsearch-fuzzyspell-stay)
