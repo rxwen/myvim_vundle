@@ -159,6 +159,7 @@ Bundle 'aklt/plantuml-syntax'
 Bundle 'solarnz/thrift.vim'
 Bundle 'mhinz/vim-grepper'
 Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'haya14busa/incsearch.vim'
 Bundle 'haya14busa/incsearch-fuzzy.vim'
 call vundle#end()            " required
@@ -410,3 +411,10 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 "map z/ <Plug>(incsearch-fuzzyspell-/)
 "map z? <Plug>(incsearch-fuzzyspell-?)
 "map zg/ <Plug>(incsearch-fuzzyspell-stay)
+
+" rainbow_parentheses configuration
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
