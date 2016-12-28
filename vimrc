@@ -121,6 +121,7 @@ Bundle 'gmarik/vundle'
 
 " My bundles here:
 Bundle 'tpope/vim-fugitive'
+Bundle 'idanarye/vim-merginal'
 Bundle 'gregsexton/gitv'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
@@ -176,7 +177,8 @@ nmap \dx :Dox<CR>
 nnoremap \gs :Gstatus<CR>
 nnoremap \gl :Glog<CR>
 nnoremap \ggl :Gvsplit! log --stat<CR>
-nnoremap \gb :Gblame<CR>
+nnoremap \gB :Gblame<CR>
+nnoremap \gb :Merginal<CR>
 nnoremap \gd :Gvdiff<CR>
 nnoremap \gv :Gitv --all<CR>
 " \gV to show log for current buffer
