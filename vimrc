@@ -12,7 +12,7 @@ set smartindent
 set autoindent
 set shiftwidth=4 " set auto indent width to 4 when switch lines
 set tabstop=4 " set indent width to 4
-set expandtab " use spaces instead of tab 
+set expandtab " use spaces instead of tab
 set encoding=utf8 " use utf8 encoding by default
 set ruler " show the line and column number of the cursor position
 set incsearch
@@ -67,12 +67,12 @@ set wildmenu
 
 if executable('ag')
     " use ag over grep
-    set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ cscope.\\*\ --ignore\ tags
+    "set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ cscope.\\*\ --ignore\ tags
     nnoremap \gp :GrepperAg 
     let g:grepper = {}
-    let g:grepper.ag = { 'grepprg': 'ag --ignore cscope.* --ignore tags' }
+    let g:grepper.ag = { 'grepprg': 'ag --ignore "cscope.\*" --ignore tags' }
 else
-    set grepprg=grep\ -nrIE\ --exclude=\"cscope.*\"\ --exclude=tags
+    "set grepprg=grep\ -nrIE\ --exclude=\"cscope.*\"\ --exclude=tags
     nnoremap \gp :GrepperGrep 
     let g:grepper = {}
     let g:grepper.ag = { 'grepprg': 'grep --exclude=cscope.* --exclude=tags' }
