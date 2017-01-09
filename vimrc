@@ -147,7 +147,11 @@ Bundle 'PProvost/vim-ps1'
 Bundle 'tfnico/vim-gradle'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/syntastic'
+if v:version < 800
+    Bundle 'scrooloose/syntastic'
+else
+    Bundle 'w0rp/ale'
+endif
 Bundle 'phongvcao/vim-stardict'
 Bundle 'Yggdroot/indentLine'
 Bundle 'godlygeek/tabular'
