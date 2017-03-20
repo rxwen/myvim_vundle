@@ -110,6 +110,9 @@ nnoremap \du :diffupdate<CR>
 cnoremap <C-A> <Home>
 cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
+"" map ctrl-s to save
+"nnoremap <c-l> :w<CR>
+"inoremap <c-l> <c-o>:w<CR>
 
 " vundle configuration
 filetype off " required for vundle
@@ -166,7 +169,6 @@ Bundle 'solarnz/thrift.vim'
 Bundle 'mhinz/vim-grepper'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'lepture/vim-jinja'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'haya14busa/incsearch.vim'
 Bundle 'haya14busa/incsearch-fuzzy.vim'
 call vundle#end()            " required
@@ -415,16 +417,10 @@ endfunction
 
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+noremap <silent><expr> zg/ incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 "map z/ <Plug>(incsearch-fuzzyspell-/)
 "map z? <Plug>(incsearch-fuzzyspell-?)
 "map zg/ <Plug>(incsearch-fuzzyspell-stay)
 
-" rainbow_parentheses configuration
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-au Syntax * RainbowParenthesesLoadChevrons
 
 let g:yankring_history_file = '.yankring_history'
