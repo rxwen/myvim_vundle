@@ -171,6 +171,7 @@ Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'lepture/vim-jinja'
 Bundle 'haya14busa/incsearch.vim'
 Bundle 'haya14busa/incsearch-fuzzy.vim'
+Bundle 'mxw/vim-jsx'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -424,3 +425,4 @@ noremap <silent><expr> zg/ incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 
 
 let g:yankring_history_file = '.yankring_history'
+"let g:jsx_ext_required = 0
