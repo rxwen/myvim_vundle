@@ -360,10 +360,17 @@ nnoremap \r :set cursorline! cursorcolumn!<CR>
 " UltiSnips configuration
 let g:UltiSnipsEnableSnipMate=1
 
-" syntastic configuration
-let g:syntastic_always_populate_loc_list=1
-nnoremap ]e :lnext<CR>
-nnoremap [e :lprevious<CR>
+if v:version < 800
+    " syntastic configuration
+    let g:syntastic_always_populate_loc_list=1
+    nnoremap ]e :lnext<CR>
+    nnoremap [e :lprevious<CR>
+else
+    " ale configuration
+    let g:ale_javascript_eslint_use_global=1
+    nnoremap ]e <Plug>(ale_next_wrap)
+    nnoremap [e <Plug>(ale_previous_wrap)
+endif
 
 " vim-go configuration
 augroup go
