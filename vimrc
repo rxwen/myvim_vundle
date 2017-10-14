@@ -151,6 +151,7 @@ Bundle 'PProvost/vim-ps1'
 Bundle 'tfnico/vim-gradle'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'Chiel92/vim-autoformat'
 if v:version < 800
     Bundle 'scrooloose/syntastic'
 else
@@ -308,17 +309,6 @@ augroup python
     autocmd Filetype python nnoremap <silent> <buffer> <C-\>c :call jedi#usages()<cr>
     autocmd Filetype python nnoremap <silent> <buffer> ,o :exec 'Pyimport ' . expand("<cword>")<cr>
 augroup END
-
-" formatprg configuration
-function! SetFormatPrg()
-    if &filetype == "xml"
-        set formatprg=xmllint\ --format\ -
-    elseif &filetype == "json"
-        set formatprg=jq\ '.'
-    elseif &filetype == "cpp" || &filetype == "c"
-        set formatprg=astyle\ --mode=c\ -A2\ -c\ -j\ -p\ -k3\ -n\ -z2
-    endif
-endfunction
 
 autocmd BufEnter * :call SetFormatPrg()
 autocmd FileType * :call SetFormatPrg()
