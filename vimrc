@@ -310,9 +310,6 @@ augroup python
     autocmd Filetype python nnoremap <silent> <buffer> ,o :exec 'Pyimport ' . expand("<cword>")<cr>
 augroup END
 
-autocmd BufEnter * :call SetFormatPrg()
-autocmd FileType * :call SetFormatPrg()
-
 " gtags configuration
 let g:Gtags_prefer_gtags_to_cscope = 0
 let g:Gtags_Auto_Map = 1
