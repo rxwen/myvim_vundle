@@ -421,5 +421,5 @@ noremap <silent><expr> zg/ incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 let g:yankring_history_file = '.yankring_history'
 let g:jsx_ext_required = 0
 
-vmap gq :Autoformat<cr>
+vnoremap gq :Autoformat<cr>
 noremap gq :Autoformat<cr>
