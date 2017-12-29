@@ -173,6 +173,7 @@ Bundle 'lepture/vim-jinja'
 Bundle 'haya14busa/incsearch.vim'
 Bundle 'haya14busa/incsearch-fuzzy.vim'
 Bundle 'mxw/vim-jsx'
+Bundle 'posva/vim-vue'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
@@ -423,3 +424,5 @@ let g:jsx_ext_required = 0
 
 vnoremap gq :Autoformat<cr>
 noremap gq :Autoformat<cr>
+
+au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
