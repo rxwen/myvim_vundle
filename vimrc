@@ -174,6 +174,9 @@ Bundle 'haya14busa/incsearch.vim'
 Bundle 'haya14busa/incsearch-fuzzy.vim'
 Bundle 'mxw/vim-jsx'
 Bundle 'posva/vim-vue'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/vimshell.vim'
+Bundle 'sebdah/vim-delve'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
