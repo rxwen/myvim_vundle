@@ -427,5 +427,8 @@ let g:jsx_ext_required = 0
 
 vnoremap gq :Autoformat<cr>
 noremap gq :Autoformat<cr>
+let g:formatters_javascript = [
+    \ 'prettier_javascript',
+    \]
 
 au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
