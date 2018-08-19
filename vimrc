@@ -176,6 +176,8 @@ Bundle 'posva/vim-vue'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/vimshell.vim'
 Bundle 'sebdah/vim-delve'
+Bundle 'dart-lang/dart-vim-plugin'
+Bundle 'keith/swift.vim'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
