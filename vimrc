@@ -178,6 +178,8 @@ Bundle 'Shougo/vimshell.vim'
 Bundle 'sebdah/vim-delve'
 Bundle 'dart-lang/dart-vim-plugin'
 Bundle 'keith/swift.vim'
+Bundle 'rust-lang/rust.vim'
+Bundle 'racer-rust/vim-racer'
 call vundle#end()            " required
 
 filetype on " revert filetype option after vundle initialization
