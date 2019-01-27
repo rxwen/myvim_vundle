@@ -433,5 +433,8 @@ noremap gq :Autoformat<cr>
 let g:formatters_javascript = [
     \ 'prettier',
     \]
+let g:formatters_python = [
+    \ 'yapf',
+    \]
 
 au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
