@@ -430,3 +430,11 @@ let g:formatters_swift = [
 
 
 au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
+
+" LanguageClient configurations
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'dart': ['~/.pub-cache/bin/dart_language_server'],
+    \ }
+    "\ 'python': ['/usr/local/bin/pyls'],
+
