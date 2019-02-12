@@ -438,3 +438,17 @@ let g:LanguageClient_serverCommands = {
     \ }
     "\ 'python': ['/usr/local/bin/pyls'],
 
+"let g:LanguageClient_selectionUI = 'quickfix'
+
+function LC_maps()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
+    nnoremap <buffer> <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <buffer> <silent> <C-\>c :call LanguageClient#textDocument_references()<CR>
+    nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+    set completefunc=LanguageClient#complete
+  endif
+endfunction
+
+autocmd FileType * call LC_maps()
+" End LanguageClient configurations
