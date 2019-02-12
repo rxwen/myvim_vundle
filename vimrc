@@ -114,76 +114,72 @@ cnoremap <C-B> <Left>
 "nnoremap <c-l> :w<CR>
 "inoremap <c-l> <c-o>:w<CR>
 
-" vundle configuration
-filetype off " required for vundle
-
-exec 'set rtp+='.g:vim_file_root.'/bundle/vundle'
-call vundle#begin(g:vim_file_root."/bundle")
-" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
 " My bundles here:
-Bundle 'tpope/vim-fugitive'
-Bundle 'idanarye/vim-merginal'
-Bundle 'gregsexton/gitv'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'vim-scripts/a.vim'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/DoxygenToolkit.vim'
-Bundle 'rxwen/javacomplete'
-Bundle 'rxwen/gtags.vim'
-Bundle 'rxwen/vim-cscope_maps'
-Bundle 'rxwen/vim-finder'
-Bundle 'rxwen/vim-ctrlp_extensions'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tmhedberg/matchit'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-airline/vim-airline'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'tpope/vim-dispatch'
-Bundle 'fatih/vim-go'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'PProvost/vim-ps1'
-Bundle 'tfnico/vim-gradle'
-Bundle 'ekalinin/Dockerfile.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'Chiel92/vim-autoformat'
+Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
+Plug 'gregsexton/gitv'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'rxwen/javacomplete', { 'for': 'java' }
+Plug 'rxwen/vim-cscope_maps'
+Plug 'rxwen/vim-finder'
+Plug 'rxwen/vim-ctrlp_extensions'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tmhedberg/matchit'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+"Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'tpope/vim-dispatch'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'PProvost/vim-ps1', { 'for': 'ps1' }
+Plug 'tfnico/vim-gradle', { 'for': ['grovvy', 'gradle'] }
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+Plug 'airblade/vim-gitgutter'
+Plug 'Chiel92/vim-autoformat'
 if v:version < 800
-    Bundle 'scrooloose/syntastic'
+    Plug 'scrooloose/syntastic'
 else
-    Bundle 'w0rp/ale'
+    Plug 'w0rp/ale'
 endif
-Bundle 'Yggdroot/indentLine'
-Bundle 'godlygeek/tabular'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'elzr/vim-json'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'aklt/plantuml-syntax'
-Bundle 'solarnz/thrift.vim'
-Bundle 'mhinz/vim-grepper'
-Bundle 'ntpeters/vim-better-whitespace'
-Bundle 'lepture/vim-jinja'
-Bundle 'haya14busa/incsearch.vim'
-Bundle 'haya14busa/incsearch-fuzzy.vim'
-Bundle 'mxw/vim-jsx'
-Bundle 'posva/vim-vue'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/vimshell.vim'
-Bundle 'sebdah/vim-delve'
-Bundle 'dart-lang/dart-vim-plugin'
-Bundle 'keith/swift.vim'
-Bundle 'rust-lang/rust.vim'
-Bundle 'racer-rust/vim-racer'
-call vundle#end()            " required
-
-filetype on " revert filetype option after vundle initialization
-" vundle configuration end
+Plug 'Yggdroot/indentLine'
+Plug 'godlygeek/tabular'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'elzr/vim-json'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
+Plug 'mhinz/vim-grepper'
+Plug 'ntpeters/vim-better-whitespace'
+"Plug 'lepture/vim-jinja'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'posva/vim-vue'
+Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimshell.vim'
+Plug 'sebdah/vim-delve', { 'for': 'go' }
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+Plug 'keith/swift.vim', { 'for': 'swift' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ 'for': ['rust', 'dart', 'python']
+    \ }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+call plug#end()
 
 " doxygentoolkit mapping
 nmap \dx :Dox<CR>
@@ -317,20 +313,11 @@ augroup python
     autocmd Filetype python nnoremap <silent> <buffer> ,o :exec 'Pyimport ' . expand("<cword>")<cr>
 augroup END
 
-" gtags configuration
-let g:Gtags_prefer_gtags_to_cscope = 0
-let g:Gtags_Auto_Map = 1
-let g:Gtags_OpenQuickfixWindow = 0
-
 " a.vim configuration
 nnoremap \av :AV<CR>
 nnoremap \as :AS<CR>
 nnoremap \at :AT<CR>
 nnoremap \ag :A<CR>
-
-" startdict configuration
-nnoremap \sw :StarDict<space>
-nnoremap \sc :StarDictCursor<CR>
 
 " indentline configuration
 nnoremap \ig :IndentLinesToggle<CR>
@@ -436,5 +423,10 @@ let g:formatters_javascript = [
 let g:formatters_python = [
     \ 'yapf',
     \]
+let g:formatdef_my_swift = '"swiftformat"'
+let g:formatters_swift = [
+    \ 'my_swift',
+    \]
+
 
 au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
