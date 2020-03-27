@@ -121,7 +121,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'gregsexton/gitv'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
@@ -129,11 +129,18 @@ Plug 'rxwen/javacomplete', { 'for': 'java' }
 Plug 'rxwen/vim-cscope_maps'
 Plug 'rxwen/vim-finder'
 Plug 'rxwen/vim-ctrlp_extensions'
+if has("mac")
+    Plug '/usr/local/opt/fzf'
+else
+    Plug '~/.fzf'
+endif
+Plug 'junegunn/fzf.vim'
+Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 "Plug 'Valloric/YouCompleteMe'
-Plug 'majutsushi/tagbar'
+Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 "Plug 'davidhalter/jedi-vim', { 'for': 'python' }
@@ -178,7 +185,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'for': ['rust', 'dart', 'python']
     \ }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 " doxygentoolkit mapping
@@ -221,7 +228,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_autoshowtag = 1
 let g:tagbar_left = 1
-nnoremap \tg :TagbarToggle<CR>
+nnoremap \tg :Vista!!<CR>
 
 " man utility options
 function! GetVisualSelection()
@@ -298,7 +305,7 @@ nmap \f:  :CtrlPCmdHistory<CR>
 nmap \f;  :CtrlPCmdHistory<CR>
 " map f; to cmd history too, can save a shift key stroke
 nmap \f/  :CtrlPSearchHistory<CR>
-call ctrlp#bdelete#init() " use ctrl-2 to delete marked buffer in ctrlp
+"call ctrlp#bdelete#init() " use ctrl-2 to delete marked buffer in ctrlp
 
 " jedi plugin configuration
 augroup python
@@ -452,3 +459,26 @@ endfunction
 
 autocmd FileType * call LC_maps()
 " End LanguageClient configurations
+"
+nmap \ff  :Files ./<CR>
+nmap \fb  :Buffers<CR>
+nmap \fc :Files <C-R>=expand('%:h')<CR><CR>
+" show root 
+"nmap \fr  :CtrlP<CR>
+nmap \fm  :History<CR>
+nmap \fd  :Files 
+nmap \fg  :GFiles?<CR>
+" list all tags from tags file
+"nmap \fa  :CtrlPTag<CR>
+" list tags in current buffer
+nmap \ft  :BTags<CR>
+" list tags in all buffers
+nmap \fT  :Tags<CR>
+nmap \fq  :Quickfix<CR>
+nmap \fl  :BLines<CR>
+nmap \fs  :Lines<CR>
+nmap \f:  :History:<CR>
+nmap \f;  :History:<CR>
+" map f; to cmd history too, can save a shift key stroke
+nmap \f/  :History/<CR>
+"nmap \gp  :Ag 
