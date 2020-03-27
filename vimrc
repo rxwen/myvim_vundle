@@ -482,3 +482,4 @@ nmap \f;  :History:<CR>
 " map f; to cmd history too, can save a shift key stroke
 nmap \f/  :History/<CR>
 "nmap \gp  :Ag 
+let g:fzf_quickfix_syntax_on = 0
