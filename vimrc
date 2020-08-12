@@ -7,6 +7,8 @@ syntax on
 let g:html_use_css = 0
 set nu
 set nobackup
+set nowritebackup
+"set cmdheight=2
 set ic " ignore case when search, to turn it off, run :set noic
 set smartindent
 set autoindent
@@ -123,7 +125,9 @@ Plug 'gregsexton/gitv'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/a.vim'
-Plug 'vim-scripts/YankRing.vim'
+"Plug 'vim-scripts/YankRing.vim'
+Plug 'svermeulen/vim-easyclip'
+Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'rxwen/javacomplete', { 'for': 'java' }
 Plug 'rxwen/vim-cscope_maps'
@@ -139,11 +143,10 @@ Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
-"Plug 'Valloric/YouCompleteMe'
 Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-"Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'tpope/vim-dispatch'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -179,13 +182,9 @@ Plug 'sebdah/vim-delve', { 'for': 'go' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ 'for': ['rust', 'dart', 'python']
-    \ }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " doxygentoolkit mapping
@@ -309,7 +308,7 @@ nmap \f/  :CtrlPSearchHistory<CR>
 
 " jedi plugin configuration
 augroup python
-    autocmd Filetype python execute 'python sys.path.append(".")'
+    "autocmd Filetype python execute 'py3 sys.path.append(".")'
     let g:jedi#popup_select_first = 0
     let g:jedi#auto_close_doc = "1"
     autocmd Filetype python nnoremap <silent> <buffer> ,R :call jedi#rename()<cr>
@@ -427,39 +426,17 @@ noremap gq :Autoformat<cr>
 let g:formatters_javascript = [
     \ 'prettier',
     \]
+let g:formatters_css = 'prettier'
 let g:formatters_python = [
-    \ 'yapf',
+    \ 'black',
     \]
-let g:formatdef_my_swift = '"swiftformat"'
+let g:formatdef_my_swift = 'swiftformat'
 let g:formatters_swift = [
     \ 'my_swift',
     \]
 
-
 au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
 
-" LanguageClient configurations
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'dart': ['~/.pub-cache/bin/dart_language_server'],
-    \ }
-    "\ 'python': ['/usr/local/bin/pyls'],
-
-"let g:LanguageClient_selectionUI = 'quickfix'
-
-function LC_maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
-    nnoremap <buffer> <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <buffer> <silent> <C-\>c :call LanguageClient#textDocument_references()<CR>
-    nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    set completefunc=LanguageClient#complete
-  endif
-endfunction
-
-autocmd FileType * call LC_maps()
-" End LanguageClient configurations
-"
 nmap \ff  :Files ./<CR>
 nmap \fb  :Buffers<CR>
 nmap \fc :Files <C-R>=expand('%:h')<CR><CR>
@@ -479,7 +456,36 @@ nmap \fl  :BLines<CR>
 nmap \fs  :Lines<CR>
 nmap \f:  :History:<CR>
 nmap \f;  :History:<CR>
+nmap \fy  :CocList -A --normal yank<cr>
 " map f; to cmd history too, can save a shift key stroke
 nmap \f/  :History/<CR>
-"nmap \gp  :Ag 
+nmap \fy  :FZFYank<CR>
 let g:fzf_quickfix_syntax_on = 0
+
+" configuration for easyclip
+function! s:yank_list()
+  redir => ys
+  silent Yanks
+  redir END
+  return split(ys, '\n')[1:]
+endfunction
+
+function! s:yank_handler(reg)
+  if empty(a:reg)
+    echo "aborted register paste"
+  else
+    let token = split(a:reg, ' ')
+    execute 'Paste' . token[0]
+  endif
+endfunction
+
+command! FZFYank call fzf#run({
+\ 'source': <sid>yank_list(),
+\ 'sink': function('<sid>yank_handler'),
+\ 'options': '-m',
+\ 'down': 12
+\ })
+let g:EasyClipShareYanks = 1
+let g:EasyClipEnableBlackHoleRedirect = 0
+let g:EasyClipUseCutDefaults = 0
+" end configuration for easyclip
