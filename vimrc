@@ -125,8 +125,8 @@ Plug 'gregsexton/gitv'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/a.vim'
-"Plug 'vim-scripts/YankRing.vim'
-Plug 'svermeulen/vim-easyclip'
+Plug 'vim-scripts/YankRing.vim'
+"Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'rxwen/javacomplete', { 'for': 'java' }
@@ -456,36 +456,9 @@ nmap \fl  :BLines<CR>
 nmap \fs  :Lines<CR>
 nmap \f:  :History:<CR>
 nmap \f;  :History:<CR>
-nmap \fy  :CocList -A --normal yank<cr>
 " map f; to cmd history too, can save a shift key stroke
 nmap \f/  :History/<CR>
-nmap \fy  :FZFYank<CR>
+nmap \fy  :YRShow<CR>
 let g:fzf_quickfix_syntax_on = 0
 
-" configuration for easyclip
-function! s:yank_list()
-  redir => ys
-  silent Yanks
-  redir END
-  return split(ys, '\n')[1:]
-endfunction
-
-function! s:yank_handler(reg)
-  if empty(a:reg)
-    echo "aborted register paste"
-  else
-    let token = split(a:reg, ' ')
-    execute 'Paste' . token[0]
-  endif
-endfunction
-
-command! FZFYank call fzf#run({
-\ 'source': <sid>yank_list(),
-\ 'sink': function('<sid>yank_handler'),
-\ 'options': '-m',
-\ 'down': 12
-\ })
-let g:EasyClipShareYanks = 1
-let g:EasyClipEnableBlackHoleRedirect = 0
-let g:EasyClipUseCutDefaults = 0
-" end configuration for easyclip
+"let g:yankring_window_use_separate = 0
