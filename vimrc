@@ -469,3 +469,4 @@ vnoremap <silent> * :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 autocmd Filetype yaml set paste
+autocmd Filetype yaml set expandtab
