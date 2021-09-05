@@ -1,6 +1,11 @@
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/ftplugin/man.vim
 
+" make sure jump to last postion after read buf
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 let g:vim_file_root="~/.vim"
 
 syntax on
