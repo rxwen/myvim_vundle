@@ -138,11 +138,12 @@ Plug 'rxwen/javacomplete', { 'for': 'java' }
 Plug 'rxwen/vim-cscope_maps'
 Plug 'rxwen/vim-finder'
 Plug 'rxwen/vim-ctrlp_extensions'
-if has("mac")
-    Plug '/usr/local/opt/fzf'
-else
-    Plug '~/.fzf'
-endif
+"if has("mac")
+    "Plug '/usr/local/opt/fzf'
+"else
+Plug '~/.fzf'
+"Plug '/usr/share/doc/fzf/examples'
+"endif
 Plug 'junegunn/fzf.vim'
 Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 Plug 'scrooloose/nerdcommenter'
@@ -197,10 +198,10 @@ nmap \dx :Dox<CR>
 " end doxygentoolkit mapping
 
 " git command
-nnoremap \gs :Gstatus<CR>
-nnoremap \gl :Glog<CR>
+nnoremap \gs :Git<CR>
+nnoremap \gl :Git log<CR>
 nnoremap \ggl :Gvsplit! log --stat<CR>
-nnoremap \gB :Gblame<CR>
+nnoremap \gB :Git blame<CR>
 nnoremap \gb :Merginal<CR>
 nnoremap \gd :Gvdiff<CR>
 nnoremap \gv :Gitv --all<CR>
@@ -218,6 +219,7 @@ nnoremap \b :Make<CR>
 nnoremap \B :Make 
 
 " nerdtree options
+let g:NERDTreeWinPos = "right"
 nnoremap \nt    :NERDTreeFocus<CR>
 nnoremap \nT    :NERDTree 
 nnoremap \nf    :NERDTreeFind<CR>
