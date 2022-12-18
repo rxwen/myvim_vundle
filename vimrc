@@ -191,6 +191,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'skywind3000/vim-terminal-help'
 call plug#end()
 
 " doxygentoolkit mapping
