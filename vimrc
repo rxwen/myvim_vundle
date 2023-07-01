@@ -193,6 +193,7 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Exafunction/codeium.vim'
 "Plug 'skywind3000/vim-terminal-help'
+Plug 'wellle/tmux-complete.vim'
 call plug#end()
 
 " doxygentoolkit mapping
@@ -482,3 +483,18 @@ autocmd Filetype yaml set expandtab
 
 let g:codeium_no_map_tab = v:true
 imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
