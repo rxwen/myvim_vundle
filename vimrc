@@ -191,7 +191,8 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'skywind3000/vim-terminal-help'
+Plug 'Exafunction/codeium.vim'
+"Plug 'skywind3000/vim-terminal-help'
 call plug#end()
 
 " doxygentoolkit mapping
@@ -478,3 +479,6 @@ vnoremap <silent> * :<C-U>
 
 autocmd Filetype yaml set paste
 autocmd Filetype yaml set expandtab
+
+let g:codeium_no_map_tab = v:true
+imap <script><silent><nowait><expr> <C-g> codeium#Accept()
