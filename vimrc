@@ -29,7 +29,7 @@ set guioptions-=T " remove toolbar
 set guioptions-=e " remove tab header line
 
 if has('win32') || has('win64')
-    let g:vim_file_root="c:/tools/vim/vimfiles"
+    let g:vim_file_root="d:/tools/vim/vimfiles"
     au GUIEnter * simalt ~x " start gvim in maximazed mode
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
@@ -121,7 +121,7 @@ cnoremap <C-B> <Left>
 "nnoremap <c-l> :w<CR>
 "inoremap <c-l> <c-o>:w<CR>
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(g:vim_file_root.'/plugged')
 
 " My bundles here:
 Plug 'tpope/vim-fugitive'
@@ -145,7 +145,7 @@ Plug '~/.fzf'
 "Plug '/usr/share/doc/fzf/examples'
 "endif
 Plug 'junegunn/fzf.vim'
-Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
+Plug 'rxwen/fzf-quickfix', {'on': 'Quickfix', 'branch': 'main'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
@@ -159,7 +159,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'PProvost/vim-ps1', { 'for': 'ps1' }
 Plug 'tfnico/vim-gradle', { 'for': ['grovvy', 'gradle'] }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', {'branch': 'main'}
 Plug 'Chiel92/vim-autoformat'
 if v:version < 800
     Plug 'scrooloose/syntastic'
@@ -191,7 +191,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Exafunction/codeium.vim'
+Plug 'Exafunction/codeium.vim', {'branch': 'main'}
 "Plug 'skywind3000/vim-terminal-help'
 Plug 'wellle/tmux-complete.vim'
 call plug#end()
