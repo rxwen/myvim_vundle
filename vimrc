@@ -1,3 +1,6 @@
+set langmenu=en_US
+let $LANG='en_US'
+
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/ftplugin/man.vim
 
@@ -141,7 +144,7 @@ Plug 'rxwen/vim-ctrlp_extensions'
 "if has("mac")
     "Plug '/usr/local/opt/fzf'
 "else
-Plug '~/.fzf'
+Plug 'junegunn/fzf'
 "Plug '/usr/share/doc/fzf/examples'
 "endif
 Plug 'junegunn/fzf.vim'
