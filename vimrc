@@ -191,7 +191,7 @@ Plug 'sebdah/vim-delve', { 'for': 'go' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+"Plug 'racer-rust/vim-racer', { 'for': 'rust' } use :CocInstall coc-rust-analyzer instead
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Exafunction/codeium.vim', {'branch': 'main'}
