@@ -214,7 +214,6 @@ nnoremap \gv :Gitv --all<CR>
 " \gV to show log for current buffer
 nnoremap \gV :Gitv! --all<CR>
 vmap \gV :Gitv! --all<CR>
-set directory+=$TMP
 
 " gitgutter configuration
 nnoremap \gh :GitGutterLineHighlightsToggle<CR>
@@ -501,3 +500,22 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" GoTo code navigation.
+nmap <silent> <c-\>d <plug>(coc-definition)
+nmap <silent> <c-\>y <Plug>(coc-type-definition)
+nmap <silent> <c-\>i <Plug>(coc-implementation)
+nmap <silent> <c-\>r <Plug>(coc-references)
+
+" Use `[g` and `]g` to navigate diagnostics.
+nmap <silent> <leader>c[ <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>c] <Plug>(coc-diagnostic-next)
+
+" Use <leader>rn to rename symbol under cursor.
+nmap <leader>cn <Plug>(coc-rename)
+
+map <D-v> "+p<CR>
+map! <D-v> <C-R>+
+tmap <D-v> <C-R>+
+vmap <D-c> "+y<CR>
+
