@@ -1,8 +1,8 @@
 set langmenu=en_US
 let $LANG='en_US'
 
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/ftplugin/man.vim
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/ftplugin/man.vim
 
 " make sure jump to last postion after read buf
 if has("autocmd")
@@ -485,7 +485,7 @@ autocmd Filetype yaml set paste
 autocmd Filetype yaml set expandtab
 
 let g:codeium_no_map_tab = v:true
-imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+imap <script><silent><nowait><expr> <C-f> codeium#Accept()
 
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
