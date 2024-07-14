@@ -519,3 +519,4 @@ map! <D-v> <C-R>+
 tmap <D-v> <C-R>+
 vmap <D-c> "+y<CR>
 
+let g:NERDCustomDelimiters = {'c': {'left': '//'}}
