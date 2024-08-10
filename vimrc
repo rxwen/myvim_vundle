@@ -181,8 +181,6 @@ Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 Plug 'mhinz/vim-grepper'
 Plug 'ntpeters/vim-better-whitespace'
 "Plug 'lepture/vim-jinja'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'posva/vim-vue'
 Plug 'Shougo/vimproc.vim'
@@ -408,27 +406,6 @@ augroup go
     "autocmd Filetype go nmap \fg :GoDecls<CR>
     autocmd Filetype go nmap \fg :GoDeclsDir<CR>
 augroup END
-
-" incsearch configuration
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-forward)
-map g/ <Plug>(incsearch-stay)
-function! s:config_fuzzyall(...) abort
-  return extend(copy({
-  \   'converters': [
-  \     incsearch#config#fuzzy#converter(),
-  \     incsearch#config#fuzzyspell#converter()
-  \   ],
-  \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
-noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-noremap <silent><expr> zg/ incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
-"map z/ <Plug>(incsearch-fuzzyspell-/)
-"map z? <Plug>(incsearch-fuzzyspell-?)
-"map zg/ <Plug>(incsearch-fuzzyspell-stay)
-
 
 let g:yankring_history_file = '.yankring_history'
 let g:jsx_ext_required = 0
