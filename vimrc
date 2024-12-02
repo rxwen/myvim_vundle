@@ -416,8 +416,10 @@ let g:formatters_javascript = [
     \ 'prettier',
     \]
 let g:formatters_css = 'prettier'
+let g:formatdef_py_ruff = '"ruff format --quiet --stdin-filename -"'
 let g:formatters_python = [
-    \ 'black',
+    \ 'py_ruff',
+    "\ 'black',
     \]
 let g:formatdef_my_swift = 'swiftformat'
 let g:formatters_swift = [
