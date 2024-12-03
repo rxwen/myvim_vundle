@@ -192,7 +192,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 "Plug 'racer-rust/vim-racer', { 'for': 'rust' } use :CocInstall coc-rust-analyzer instead
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Exafunction/codeium.vim', {'branch': 'main'}
+Plug 'github/copilot.lua'
 "Plug 'skywind3000/vim-terminal-help'
 Plug 'wellle/tmux-complete.vim'
 call plug#end()
@@ -367,6 +367,7 @@ else
     let g:ale_javascript_eslint_use_global=1
     nnoremap ]e <Plug>(ale_next_wrap)
     nnoremap [e <Plug>(ale_previous_wrap)
+    let g:ale_fixers = {'python': ['ruff']}
 endif
 
 " vim-go configuration
