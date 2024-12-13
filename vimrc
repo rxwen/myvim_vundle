@@ -60,7 +60,7 @@ else
     if has('gui_running')
         colo mydesert
     else
-        colo molokai
+        colo monokai
     endif
 endif
 
