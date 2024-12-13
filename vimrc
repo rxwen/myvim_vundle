@@ -368,6 +368,7 @@ else
     nnoremap ]e <Plug>(ale_next_wrap)
     nnoremap [e <Plug>(ale_previous_wrap)
     let g:ale_fixers = {'python': ['ruff']}
+    nnoremap \af :ALEFix<CR>
 endif
 
 " vim-go configuration
