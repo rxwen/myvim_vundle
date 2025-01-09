@@ -136,8 +136,6 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/YankRing.vim'
 "Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'rxwen/javacomplete', { 'for': 'java' }
 Plug 'rxwen/vim-cscope_maps'
 Plug 'rxwen/vim-finder'
 Plug 'rxwen/vim-ctrlp_extensions'
@@ -158,11 +156,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'tpope/vim-dispatch'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'PProvost/vim-ps1', { 'for': 'ps1' }
 Plug 'tfnico/vim-gradle', { 'for': ['grovvy', 'gradle'] }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-Plug 'airblade/vim-gitgutter', {'branch': 'main'}
 Plug 'Chiel92/vim-autoformat'
 if v:version < 800
     Plug 'scrooloose/syntastic'
@@ -185,21 +181,26 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'posva/vim-vue'
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/vimshell.vim'
-Plug 'sebdah/vim-delve', { 'for': 'go' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 "Plug 'racer-rust/vim-racer', { 'for': 'rust' } use :CocInstall coc-rust-analyzer instead
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.lua'
+Plug 'github/copilot.vim', {'branch': 'release'}
 "Plug 'skywind3000/vim-terminal-help'
 Plug 'wellle/tmux-complete.vim'
+if has('nvim')
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'sindrets/diffview.nvim', {'branch': 'main'}
+Plug 'lewis6991/gitsigns.nvim', {'branch': 'main'}
+else
+Plug 'airblade/vim-gitgutter', {'branch': 'main'}
+Plug 'rxwen/javacomplete', { 'for': 'java' }
+Plug 'sebdah/vim-delve', { 'for': 'go' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+endif
 call plug#end()
-
-" doxygentoolkit mapping
-nmap \dx :Dox<CR>
-" end doxygentoolkit mapping
 
 " git command
 nnoremap \gs :Git<CR>
@@ -207,6 +208,7 @@ nnoremap \gl :Git log<CR>
 nnoremap \ggl :Gvsplit! log --stat<CR>
 nnoremap \gB :Git blame<CR>
 nnoremap \gb :Merginal<CR>
+nnoremap \gd :DiffviewOpen<CR>
 nnoremap \gd :Gvdiff<CR>
 nnoremap \gv :Gitv --all<CR>
 " \gV to show log for current buffer
@@ -252,21 +254,6 @@ endfunction
 nnoremap \m :Man 
 nnoremap K :exec "Man" expand("<cword>")<CR>
 vnoremap K <esc>:exec "Man " GetVisualSelection()<CR>
-
-" youcompleteme configuration
-let g:ycm_collect_identifiers_from_tags_files = 0 " consumes too much memory when work with linux kernel
-let g:ycm_key_list_previous_completion = [] "disable default key
-let g:ycm_key_list_select_completion = [] "disable default key
-"let g:ycm_key_invoke_completion = '<C-XC-O>'
-let g:ycm_global_ycm_extra_conf = g:vim_file_root.'/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_seed_identifiers_with_syntax = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 0
-let g:ycm_error_symbol = 'x'
-let g:ycm_warning_symbol = '>'
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_always_populate_location_list = 1
 
 " ctrlp configuration
 let g:ctrlp_regexp = 0
@@ -501,3 +488,7 @@ tmap <D-v> <C-R>+
 vmap <D-c> "+y<CR>
 
 let g:NERDCustomDelimiters = {'c': {'left': '//'}}
+
+autocmd Filetype yaml setlocal expandtab
+"autocmd Filetype go setlocal expandtab
+
