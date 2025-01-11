@@ -185,7 +185,8 @@ Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 "Plug 'racer-rust/vim-racer', { 'for': 'rust' } use :CocInstall coc-rust-analyzer instead
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim', {'branch': 'release'}
+"Plug 'github/copilot.vim', {'branch': 'release'}
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 "Plug 'skywind3000/vim-terminal-help'
 Plug 'wellle/tmux-complete.vim'
 if has('nvim')
@@ -451,8 +452,12 @@ vnoremap <silent> * :<C-U>
 autocmd Filetype yaml set paste
 autocmd Filetype yaml set expandtab
 
-let g:codeium_no_map_tab = v:true
-imap <script><silent><nowait><expr> <C-f> codeium#Accept()
+"let g:codeium_no_map_tab = v:true
+"imap <script><silent><nowait><expr> <C-f> codeium#Accept()
+imap <S-tab>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <c-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <c-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
+set statusline+=\{…\}%3{codeium#GetStatusString()}
 
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
