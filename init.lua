@@ -24,6 +24,14 @@ if not ok_gs then
     print("Warning: gitsigns is not installed.")
 else
     gitsigns_plugin.setup{
+      current_line_blame = true,
+      current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = 'eol',
+        delay = 100,
+        ignore_whitespace = false,
+      },
+      current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
       signs = {
         add          = { text = '+' },
         change       = { text = '~' },
@@ -84,3 +92,8 @@ else
      end
     }
 end
+
+require('avante_lib').load()
+require('avante').setup({
+    provider="openai"
+})
