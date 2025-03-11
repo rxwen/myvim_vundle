@@ -10,6 +10,19 @@ if has("autocmd")
 endif
 
 let g:vim_file_root="~/.vim"
+if has("nvim")
+    if has("win32") || has("win64")
+        let g:vim_file_root = expand('~/AppData/Local/nvim')
+    else
+        let g:vim_file_root = expand('~/.config/nvim')
+    endif
+else
+    if has("win32") || has("win64")
+        let g:vim_file_root = expand('~/vimfiles')
+    else
+        let g:vim_file_root = expand('~/.vim')
+    endif
+endif
 
 syntax on
 let g:html_use_css = 0
@@ -341,6 +354,8 @@ vnoremap \t :Tabularize /
 
 " toggle ruler
 nnoremap \r :set cursorline! cursorcolumn!<CR>
+" toggle paste
+nnoremap \p :set paste!<CR>
 
 " UltiSnips configuration
 let g:UltiSnipsEnableSnipMate=1
