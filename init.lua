@@ -93,32 +93,37 @@ else
     }
 end
 
-require("codecompanion").setup({
-   strategies = {
-    chat = {
-      adapter = "openai",
-    },
-    inline = {
-      adapter = "openai",
-      keymaps = {
-        accept_change = {
-          modes = { n = "ga" },
-          description = "Accept the suggested change",
+local ok_cc, cc_plugin = pcall(require, "codecompanion")
+if not ok_cc then
+    print("Warning: codecompanion is not installed.")
+else
+    cc_plugin.setup({
+       strategies = {
+        chat = {
+          adapter = "openai",
         },
-        reject_change = {
-          modes = { n = "gr" },
-          description = "Reject the suggested change",
+        inline = {
+          adapter = "openai",
+          keymaps = {
+            accept_change = {
+              modes = { n = "ga" },
+              description = "Accept the suggested change",
+            },
+            reject_change = {
+              modes = { n = "gr" },
+              description = "Reject the suggested change",
+            },
+          },
         },
       },
-    },
-  },
-  adapters = {
-    anthropic = function()
-      return require("codecompanion.adapters").extend("openai", {
-        env = {
-          api_key = ""
-        },
-      })
-    end,
-  },
-})
+      adapters = {
+        anthropic = function()
+          return require("codecompanion.adapters").extend("openai", {
+            env = {
+              api_key = ""
+            },
+          })
+        end,
+      },
+    })
+end
