@@ -207,6 +207,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'sindrets/diffview.nvim', {'branch': 'main'}
 Plug 'lewis6991/gitsigns.nvim', {'branch': 'main'}
+Plug 'echasnovski/mini.diff', { 'branch': 'stable' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'olimorris/codecompanion.nvim', {'branch': 'main'}
 else
 Plug 'airblade/vim-gitgutter', {'branch': 'main'}
 Plug 'rxwen/javacomplete', { 'for': 'java' }

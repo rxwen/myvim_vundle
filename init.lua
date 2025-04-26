@@ -92,3 +92,33 @@ else
      end
     }
 end
+
+require("codecompanion").setup({
+   strategies = {
+    chat = {
+      adapter = "openai",
+    },
+    inline = {
+      adapter = "openai",
+      keymaps = {
+        accept_change = {
+          modes = { n = "ga" },
+          description = "Accept the suggested change",
+        },
+        reject_change = {
+          modes = { n = "gr" },
+          description = "Reject the suggested change",
+        },
+      },
+    },
+  },
+  adapters = {
+    anthropic = function()
+      return require("codecompanion.adapters").extend("openai", {
+        env = {
+          api_key = ""
+        },
+      })
+    end,
+  },
+})
