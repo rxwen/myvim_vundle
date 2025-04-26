@@ -87,6 +87,8 @@ set hidden
 "let vim command line be more zsh like
 set wildmode=full
 set wildmenu
+set wildmode=longest:full,full
+set wildoptions=fuzzy,pum,tagfile
 
 if executable('ag')
     " use ag over grep
