@@ -97,6 +97,7 @@ local ok_cc, cc_plugin = pcall(require, "codecompanion")
 if not ok_cc then
     print("Warning: codecompanion is not installed.")
 else
+    print("setup: codecompanion.")
     cc_plugin.setup({
        strategies = {
         chat = {
@@ -119,9 +120,9 @@ else
       adapters = {
         anthropic = function()
           return require("codecompanion.adapters").extend("openai", {
-            env = {
-              api_key = ""
-            },
+            --env = {
+              --api_key = ""
+            --},
           })
         end,
       },
