@@ -213,6 +213,7 @@ Plug 'echasnovski/mini.diff', { 'branch': 'stable' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'olimorris/codecompanion.nvim', {'branch': 'main'}
+Plug 'gelguy/wilder.nvim'
 else
 Plug 'airblade/vim-gitgutter', {'branch': 'main'}
 Plug 'rxwen/javacomplete', { 'for': 'java' }
@@ -516,4 +517,3 @@ let g:NERDCustomDelimiters = {'c': {'left': '//'}}
 
 autocmd Filetype yaml setlocal expandtab
 "autocmd Filetype go setlocal expandtab
-
