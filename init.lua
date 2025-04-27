@@ -126,4 +126,17 @@ else
         end,
       },
     })
+	vim.keymap.set('n', '<leader>cp', function()
+	  vim.cmd('CodeCompanion')
+	end, { noremap = true, silent = false })
+
+	vim.keymap.set('v', '<leader>cp', function()
+	  vim.cmd("'<,'>CodeCompanion")
+	end, { noremap = true, silent = false })
+
+	vim.keymap.set('n', '<leader>ct toggle', function()
+	  vim.cmd('CodeCompanionChat')
+	end, { noremap = true, silent = false })
 end
+
+--require("noice").setup()
