@@ -213,7 +213,7 @@ Plug 'echasnovski/mini.diff', { 'branch': 'stable' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'olimorris/codecompanion.nvim', {'branch': 'main'}
-Plug 'gelguy/wilder.nvim'
+"Plug 'gelguy/wilder.nvim'
 else
 Plug 'airblade/vim-gitgutter', {'branch': 'main'}
 Plug 'rxwen/javacomplete', { 'for': 'java' }

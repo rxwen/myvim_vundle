@@ -140,12 +140,12 @@ else
 	end, { noremap = true, silent = false })
 end
 
-local ok_wilder, wilder= pcall(require, "wilder")
-if not ok_wilder then
-    print("Warning: wilder is not installed.")
-else
-    wilder.setup({modes = {':', '/', '?'}})
-    wilder.set_option('renderer', wilder.popupmenu_renderer({
-      highlighter = wilder.basic_highlighter(),
-    }))
-end
+--local ok_wilder, wilder= pcall(require, "wilder")
+--if not ok_wilder then
+    --print("Warning: wilder is not installed.")
+--else
+    --wilder.setup({modes = {':', '/', '?'}})
+    --wilder.set_option('renderer', wilder.popupmenu_renderer({
+      --highlighter = wilder.basic_highlighter(),
+    --}))
+--end
