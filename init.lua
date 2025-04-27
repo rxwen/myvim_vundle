@@ -135,8 +135,8 @@ else
 	  vim.api.nvim_feedkeys(":CodeCompanion ", 'n', false)
 	end, { noremap = true, silent = true })
 
-	vim.keymap.set('n', '<leader>ct toggle', function()
-	  vim.cmd('CodeCompanionChat')
+	vim.keymap.set('n', '<leader>ct', function()
+	  vim.cmd('CodeCompanionChat toggle')
 	end, { noremap = true, silent = false })
 end
 
