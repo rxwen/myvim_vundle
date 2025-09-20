@@ -1,23 +1,27 @@
 local vimrc_path = vim.fn.stdpath("config") .. "/vimrc"
 vim.cmd("source " .. vimrc_path)
+-- global defaults (capabilities/on_attach/etc.)
+local caps = pcall(require, "cmp_nvim_lsp") and require("cmp_nvim_lsp").default_capabilities() or nil
+vim.lsp.config('*', {
+  capabilities = caps,
+  -- on_attach = function(client, bufnr) ... end,
+})
 
-local ok, lspconfig = pcall(require, "lspconfig")
-if not ok then
-    print("Warning: lspconfig is not installed. Skipping LSP setup.")
-    return
-else
-    --lspconfig.pyright.setup {}
-    lspconfig.ruff.setup {}
-    lspconfig.ts_ls.setup {}
-    lspconfig.gopls.setup {}
-    lspconfig.clangd.setup {}
-    lspconfig.rust_analyzer.setup {}
-    lspconfig.jdtls.setup {}
-    lspconfig.dartls.setup {}
-    lspconfig.solargraph.setup {}
-    lspconfig.lua_ls.setup {}
-    --lspconfig.bashls.setup {}
-end
+-- per-server tweaks (leave empty tables to use defaults from nvim-lspconfig)
+vim.lsp.config.ruff = {}
+vim.lsp.config.ts_ls = {}
+vim.lsp.config.gopls = {}
+vim.lsp.config.clangd = {}
+vim.lsp.config.rust_analyzer = {}
+vim.lsp.config.jdtls = {}
+vim.lsp.config.dartls = {}
+vim.lsp.config.solargraph = {}
+vim.lsp.config.lua_ls = {}
+
+-- enable them (autostart on matching filetypes)
+vim.lsp.enable({
+  'ruff','ts_ls','gopls','clangd','rust_analyzer','jdtls','dartls','solargraph','lua_ls'
+})
 
 local ok_gs, gitsigns_plugin = pcall(require, "gitsigns")
 if not ok_gs then
