@@ -378,7 +378,8 @@ else
     let g:ale_javascript_eslint_use_global=1
     nnoremap ]e <Plug>(ale_next_wrap)
     nnoremap [e <Plug>(ale_previous_wrap)
-    let g:ale_fixers = {'python': ['ruff'], 'go': ['gopls', 'gofmt', 'goimports']}
+    let g:ale_fixers = {'python': ['ruff'], 'go': ['gofmt', 'goimports']}
+    let g:ale_linters = {'python': ['ruff'], 'go': ['gofmt']}
     nnoremap \af :ALEFix<CR>
 endif
 
