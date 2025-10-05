@@ -214,6 +214,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'olimorris/codecompanion.nvim', {'branch': 'main'}
 Plug 'lambdalisue/vim-suda'
+Plug 'folke/snacks.nvim', {'branch': 'main'}
+Plug 'coder/claudecode.nvim', {'branch': 'main'}
 "Plug 'gelguy/wilder.nvim'
 else
 Plug 'airblade/vim-gitgutter', {'branch': 'main'}
