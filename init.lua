@@ -162,29 +162,12 @@ else
     snacks_plugin.setup({})
 end
 
--- Check VIM_PREFER_CODEX environment variable
+-- Determine which AI plugin to load
 local prefer_codex = vim.env.VIM_PREFER_CODEX
+local claude_available = vim.fn.executable("claude") == 1
+local use_claude = (not prefer_codex or prefer_codex == "") and claude_available
 
-if prefer_codex and prefer_codex ~= "" then
-    -- Load Codex plugin
-    local ok_codex, codex_plugin = pcall(require, "codex")
-    if not ok_codex then
-        print("Warning: codex is not installed.")
-    else
-        codex_plugin.setup({})
-        local map = vim.keymap.set
-        map("n", "<leader>ac", "<cmd>Codex<cr>",              { desc = "Toggle Codex" })
-        map("n", "<leader>af", "<cmd>CodexFocus<cr>",         { desc = "Focus Codex" })
-        map("n", "<leader>ar", "<cmd>Codex --resume<cr>",     { desc = "Resume Codex" })
-        map("n", "<leader>aC", "<cmd>Codex --continue<cr>",   { desc = "Continue Codex" })
-        map("n", "<leader>am", "<cmd>CodexSelectModel<cr>",   { desc = "Select Codex model" })
-        map("n", "<leader>ab", "<cmd>CodexAdd %<cr>",         { desc = "Add current buffer" })
-        map("v", "<leader>as", "<cmd>CodexSend<cr>",          { desc = "Send to Codex" })
-        map("n", "<leader>as", "<cmd>CodexTreeAdd<cr>",       { desc = "Add file" })
-        map("n", "<leader>aa", "<cmd>CodexDiffAccept<cr>",    { desc = "Accept diff" })
-        map("n", "<leader>ad", "<cmd>CodexDiffDeny<cr>",      { desc = "Deny diff" })
-    end
-else
+if use_claude then
     -- Load Claude plugin
     local ok_claude, claude_plugin = pcall(require, "claudecode")
     if not ok_claude then
@@ -202,5 +185,24 @@ else
         map("n", "<leader>as", "<cmd>ClaudeCodeTreeAdd<cr>",     { desc = "Add file" })
         map("n", "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>",  { desc = "Accept diff" })
         map("n", "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>",    { desc = "Deny diff" })
+    end
+else
+    -- Load Codex plugin
+    local ok_codex, codex_plugin = pcall(require, "codex")
+    if not ok_codex then
+        print("Warning: codex is not installed.")
+    else
+        codex_plugin.setup({})
+        local map = vim.keymap.set
+        map("n", "<leader>ac", "<cmd>Codex<cr>",              { desc = "Toggle Codex" })
+        map("n", "<leader>af", "<cmd>CodexFocus<cr>",         { desc = "Focus Codex" })
+        map("n", "<leader>ar", "<cmd>Codex --resume<cr>",     { desc = "Resume Codex" })
+        map("n", "<leader>aC", "<cmd>Codex --continue<cr>",   { desc = "Continue Codex" })
+        map("n", "<leader>am", "<cmd>CodexSelectModel<cr>",   { desc = "Select Codex model" })
+        map("n", "<leader>ab", "<cmd>CodexAdd %<cr>",         { desc = "Add current buffer" })
+        map("v", "<leader>as", "<cmd>CodexSend<cr>",          { desc = "Send to Codex" })
+        map("n", "<leader>as", "<cmd>CodexTreeAdd<cr>",       { desc = "Add file" })
+        map("n", "<leader>aa", "<cmd>CodexDiffAccept<cr>",    { desc = "Accept diff" })
+        map("n", "<leader>ad", "<cmd>CodexDiffDeny<cr>",      { desc = "Deny diff" })
     end
 end
