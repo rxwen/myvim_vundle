@@ -216,7 +216,6 @@ Plug 'olimorris/codecompanion.nvim', {'branch': 'main'}
 Plug 'lambdalisue/vim-suda'
 Plug 'folke/snacks.nvim', {'branch': 'main'}
 Plug 'coder/claudecode.nvim', {'branch': 'main'}
-Plug 'rxwen/codex.nvim', {'branch': 'main'}
 "Plug 'gelguy/wilder.nvim'
 else
 Plug 'airblade/vim-gitgutter', {'branch': 'main'}
